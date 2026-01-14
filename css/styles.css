@@ -1,0 +1,281 @@
+/* БАЗА */
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #1f2933;
+}
+
+/* Немного "воздуха" между секциями на больших экранах */
+@media (min-width: 992px) {
+    .py-lg-6 {
+        padding-top: 4.5rem !important;
+        padding-bottom: 4.5rem !important;
+    }
+}
+
+/* HEADER */
+
+.site-header .navbar-brand span {
+    letter-spacing: 0.09em;
+}
+
+/* HERO С ВИДЕО */
+
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: stretch;
+    color: #fff;
+}
+
+/* Видеофон */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Тёмный полупрозрачный слой поверх видео */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.6));
+}
+
+/* Контент геро */
+.hero-content {
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* На больших экранах выравниваем по центру по вертикали */
+@media (min-width: 992px) {
+    .hero-content {
+        min-height: 70vh;
+        align-items: center;
+    }
+}
+
+.hero-kicker {
+    letter-spacing: 0.18em;
+    font-weight: 600;
+}
+
+.hero-scroll {
+    position: absolute;
+    right: 0;
+    bottom: 2rem;
+}
+
+.hero-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), transparent);
+}
+
+/* БЛОКИ З ЦИФРАМИ */
+
+.stat-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.stat-card .display-5 {
+    line-height: 1;
+}
+
+/* ПРОДУКТ-КАРТОЧКИ */
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.product-card__image-wrapper {
+    padding: 1.25rem 1.25rem 0;
+    height: 220px;                 /* фиксированная «зона» под картинку */
+    display: flex;
+    align-items: center;           /* центр по вертикали */
+    justify-content: center;       /* центр по горизонтали */
+}
+
+.product-card__image {
+    max-height: 180px;             /* УМЕНЬШИЛИ картинку */
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;           /* не обрезать, а вписать */
+}
+
+.product-card__body {
+    padding: 1rem 1.25rem 1.25rem;
+    flex-grow: 1;
+}
+
+.product-card__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.product-card__text {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.product-card__link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.product-card__link:hover {
+    text-decoration: underline;
+}
+
+/* Ховер эффект */
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    border-color: transparent;
+}
+
+.product-card:hover .product-card__image {
+    transform: scale(1.04);
+}
+
+/* КАРУСЕЛЬ ПРОДУКТІВ НА ГОЛОВНІ */
+
+.product-carousel {
+    position: relative;
+}
+
+.product-carousel__track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 0 1.5rem;
+
+    /* ховаємо нативний скролбар, але прокрутка працює */
+    scrollbar-width: none;         /* Firefox */
+}
+.product-carousel__track::-webkit-scrollbar {
+    display: none;                 /* Chrome / Edge / Safari */
+}
+
+
+/* ширина картки в каруселі */
+.product-carousel .product-card {
+    flex: 0 0 260px;
+}
+
+.product-carousel__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.product-carousel__progress {
+    flex: 1;
+    height: 3px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    overflow: hidden;
+}
+
+.product-carousel__progress-bar {
+    height: 100%;
+    width: 0;              /* сначала 0%, будет расти от JS */
+    background: #2563eb;
+    border-radius: inherit;
+    transition: width 0.15s ease-out;
+}
+
+.product-carousel__nav-buttons {
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+.product-carousel__nav {
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: #ffffff;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #111827;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+.product-carousel__nav:hover {
+    background: #f3f4f6;
+}
+
+/* на дуже вузьких екранах можна приховати кнопки, залишити тільки скрол */
+@media (max-width: 575.98px) {
+    .product-carousel__nav-buttons {
+        display: none;
+    }
+}
+
+
+
+
+/* КАРТИНКИ В ИНФО-БЛОКАХ */
+
+.info-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* КОНТАКТНЫЙ БАННЕР */
+
+.contact-cta {
+    color: #fff;
+}
+
+.contact-cta-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom ; /* картинка зміщується вгору */
+    z-index: 0;
+}
+
+
+.contact-cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    z-index: 1;
+}
+
+.contact-cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* FOOTER */
+
+footer {
+    font-size: 0.85rem;
+}
