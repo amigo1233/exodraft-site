@@ -22,7 +22,7 @@ body {
 /* HERO С ВИДЕО */
 
 .hero {
-    min-height: 70vh;
+    min-height: 91vh;
     display: flex;
     align-items: stretch;
     color: #fff;
@@ -41,7 +41,7 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.6));
+    background: rgba(0, 0, 0, 0.35);
 }
 
 /* Контент геро */
@@ -222,6 +222,7 @@ body {
     color: #111827;
     cursor: pointer;
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+    padding: 0px 0px 7px 0px;
 }
 .product-carousel__nav:hover {
     background: #f3f4f6;
@@ -248,6 +249,7 @@ body {
 /* КОНТАКТНЫЙ БАННЕР */
 
 .contact-cta {
+    min-height: 70vh;
     color: #fff;
 }
 
@@ -265,17 +267,204 @@ body {
 .contact-cta-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(0, 0, 0, 0.35);
     z-index: 1;
 }
 
 .contact-cta-content {
+    padding-top: 30px;
     position: relative;
     z-index: 2;
 }
+
+.contact-cta-btn {
+    padding-inline: 2.5rem;   /* чуть пошире */
+    font-weight: 500;
+}
+
+/* Титул и текст в контактном баннере */
+
+.contact-cta-title {
+    font-size: clamp(1.8rem, 2.4vw + 0.8rem, 2.6rem); /* адаптивный крупный заголовок */
+    line-height: 1.25;
+}
+
+.contact-cta-text {
+    font-size: 1.05rem;         /* немного крупнее стандартного */
+    line-height: 1.6;
+}
+
+/* Кнопка в контактном блоке */
+.contact-cta-btn {
+    padding-inline: 2.5rem;
+    font-weight: 500;
+}
+
+/* На больших экранах делаем ещё чуть крупнее */
+@media (min-width: 992px) {
+    .contact-cta-text {
+        font-size: 1.1rem;
+    }
+}
+
 
 /* FOOTER */
 
 footer {
     font-size: 0.85rem;
+}
+
+.site-footer {
+    background-color: #f9fafb; /* светлый фон */
+    color: #0f172a;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.95rem;
+}
+
+.site-footer a {
+    color: #0f172a;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+.footer-logo img {
+    height: 32px;
+    width: auto;
+}
+
+.footer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #0b2035; /* чуть темнее, как на оригинале */
+}
+
+.footer-links li + li {
+    margin-top: 0.3rem;
+}
+
+.footer-text p {
+    color: #4b5563;
+}
+
+/* Нижняя полоска */
+.site-footer__bottom {
+    border-top: 1px solid #e5e7eb;
+    padding: 0.75rem 0;
+    background-color: #f3f4f6;
+}
+
+.site-footer__bottom span {
+    color: #6b7280;
+}
+
+/* На маленьких экранах чуть сжимаем отступы */
+@media (max-width: 575.98px) {
+    .site-footer .container {
+        padding-inline: 1rem;
+    }
+}
+
+.section-kicker {
+    font-weight: 600;        /* чуть жирнее (между normal и bold) */
+    letter-spacing: 0.12em;  /* расстояние между буквами */
+    text-transform: uppercase; /* на всякий случай, если где-то забудешь класс */
+}
+
+
+
+/* === PRODUCTS PAGE (каталог) === */
+
+.inner-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 4rem;
+    color: #fff;
+}
+
+.inner-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* можно подрегулировать яркость */
+    filter: brightness(0.7);
+}
+
+.inner-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(15, 23, 42, 0.75) 0%,
+        rgba(15, 23, 42, 0.55) 40%,
+        rgba(15, 23, 42, 0.0) 100%
+    );
+}
+
+.inner-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* карточки категорий */
+
+.category-card {
+    display: block;
+    border-radius: 1rem;
+    padding: 1.5rem 1.75rem;
+    background-color: #f3f4f6;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+.category-card:hover {
+    background-color: #e5efff;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    transform: translateY(-2px);
+}
+
+.category-card__kicker {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #1d4ed8;
+    margin-bottom: .4rem;
+}
+
+.category-card__title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: .35rem;
+}
+
+.category-card__text {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0;
+}
+
+/* сетка карточек продуктов */
+
+.products-section {
+    padding: 3rem 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* чтобы product-card нормально вел себя в гриде, а не тянулся как в карусели */
+
+.products-grid .product-card {
+    min-width: 0;
 }
