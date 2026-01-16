@@ -1,0 +1,460 @@
+---
+layout: base.njk
+title: Головна — Exodraft
+---
+
+
+    <!-- HERO с ВИДЕО -->
+    <section class="hero position-relative overflow-hidden">
+        <video class="hero-video" autoplay muted loop playsinline
+                poster="img/hero-poster.jpg">
+            <!-- poster=картинка-заглушка, если видео не загрузится -->
+            <source src="video/hero-video.mp4" type="video/mp4">
+            Ваш браузер не підтримує відтворення відео.
+        </video>
+
+        <!-- Тёмный оверлей поверх видео -->
+        <div class="hero-overlay"></div>
+
+        <div class="container position-relative">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-7 col-xl-6 text-white">
+                    <p class="text-uppercase small mb-2 hero-kicker">
+                        Exodraft
+                    </p>
+                    <h1 class="display-4 fw-bold mb-3">
+                        Ваша енергія — оптимізована.
+                    </h1>
+                    <p class="lead mb-4">
+                        Ми створюємо рішення, які зменшують викиди CO₂ та
+                        оптимізують споживання енергії в приватних будинках
+                        і промисловості, підвищуючи комфорт та зменшуючи
+                        вплив на довкілля і витрати.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="products.html" class="btn btn-light btn-lg ">
+                            Переглянути продукцію
+                        </a>
+                        <a href="contact.html" class="btn btn-outline-light btn-lg">
+                            Отримати консультацію
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Маленький скролл-индикатор -->
+            <div class="hero-scroll d-none d-md-flex flex-column align-items-center text-white-50">
+                <span class="small mb-1">Scroll</span>
+                <div class="hero-scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК З ТЕКСТОМ + ЦИФРЫ -->
+    <section class="py-5 py-lg-6 bg-white">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="h3 fw-semibold mb-3">
+                        Інвестиції, що зменшують CO₂ та економлять енергію
+                    </h2>
+                    <p class="mb-3">
+                        Ми розробляємо системи димовидалення, електростатичні фільтри
+                        та рішення з рекуперації тепла, які допомагають нашим клієнтам
+                        досягати більш стійкого споживання енергії.
+                    </p>
+                    <p class="mb-0">
+                        Рішення Exodraft можна використовувати як у приватних будинках,
+                        так і на промислових об’єктах — там, де важливі комфорт,
+                        стабільність роботи та зменшення впливу на довкілля.
+                    </p>
+                    <div class="mt-4">
+                        <a href="about.html" class="btn btn-outline-primary">
+                            Дізнатися більше про нас
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="stat-card p-3 p-lg-4 h-100">
+                                <p class="small text-uppercase text-muted mb-1">
+                                    Відновлення тепла до
+                                </p>
+                                <div class="display-5 fw-bold text-primary mb-1">
+                                    95<span class="fs-3">%</span>
+                                </div>
+                                <p class="small mb-0">
+                                    З рекуперацією тепла ви повертаєте енергію назад у систему
+                                    замість того, щоб викидати її в атмосферу.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-card p-3 p-lg-4 h-100">
+                                <p class="small text-uppercase text-muted mb-1">
+                                    Зменшення шкідливих частинок до
+                                </p>
+                                <div class="display-5 fw-bold text-primary mb-1">
+                                    99,5<span class="fs-3">%</span>
+                                </div>
+                                <p class="small mb-0">
+                                    Електростатичні фільтри значно скорочують викиди
+                                    дрібнодисперсних частинок із димових газів.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРОДУКЦІЯ (карусель) -->
+    <section class="py-5 py-lg-6 bg-light" id="products">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+        <div>
+            <h2 class="h3 fw-semibold mb-0">Продукція</h2>
+        </div>
+        <div>
+            <a href="products.html" class="btn btn-outline-primary btn-sm">
+            Переглянути весь каталог
+            </a>
+        </div>
+        </div>
+
+        <div class="product-carousel" data-carousel>
+        <div class="product-carousel__track" data-carousel-track>
+
+            <!-- Heat recovery -->
+            <a class="product-card product-card--link" href="products/basic-plate-250-2000.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Heat-recovery/Basic-Plate.png" alt="Basic Plate 250-2000" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">Basic Plate 250-2000</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/safe-plate-80-500.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Heat-recovery/Safe-Plate-600x476.png" alt="Safe Plate 80-500" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">Safe Plate 80-500</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/cfir.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Heat-recovery/CFIR-600x500.png" alt="CFIR" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">CFIR</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/bypass-damper.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Heat-recovery/bypass-damper-600x600.png" alt="Bypass Damper" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">Bypass Damper</h3>
+            </div>
+            </a>
+
+            <!-- Particle filters -->
+            <a class="product-card product-card--link" href="products/particle-filter-esp-10.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Particle-filters/ESP-10-BLACK-1-600x600.png" alt="Particle filter ESP-10" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">Particle filter ESP-10</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/particle-filter-esp-25.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Particle-filters/ESP-25-600x785.png" alt="Particle filter ESP-25" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">Particle filter ESP-25</h3>
+            </div>
+            </a>
+
+            <!-- Controls -->
+            <a class="product-card product-card--link" href="products/xzense.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/Xzense-600x532.png" alt="Xzense" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">Xzense</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/efc15.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EFC15-600x692.png" alt="EFC15" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EFC15</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/efc16.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EFC16-600x607.png" alt="EFC16" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EFC16</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/efc18.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EFC18-600x635.png" alt="EFC18" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EFC18</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/efc21.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EFC21-600x505.png" alt="EFC21" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EFC21</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/efc35s.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EFC15-600x692.png" alt="EFC35S" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EFC35S</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/ehc20.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EHC20-600x600.png" alt="EHC20" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EHC20</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/eahc21.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EAHC21-600x894.png" alt="EAHC21" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EAHC21</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/ebc24.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EBC24-600x646.png" alt="EBC24" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EBC24</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/ebc22.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EBC22-600x592.png" alt="EBC22" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EBC22</h3>
+            </div>
+            </a>
+
+            <a class="product-card product-card--link" href="products/ebc10v2.html">
+            <div class="product-card__image-wrapper">
+                <img src="img/products/Controls/EBC10v2-600x706.png" alt="EBC10v2" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">EBC10v2</h3>
+            </div>
+            </a>
+
+        </div>
+
+        <div class="product-carousel__footer" data-carousel-footer>
+            <div class="product-carousel__progress">
+            <div class="product-carousel__progress-bar" data-carousel-progress></div>
+            </div>
+            <div class="product-carousel__nav-buttons">
+            <button class="product-carousel__nav product-carousel__nav--prev"
+                    type="button" data-carousel-prev aria-label="Попередні продукти">‹</button>
+            <button class="product-carousel__nav product-carousel__nav--next"
+                    type="button" data-carousel-next aria-label="Наступні продукти">›</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+
+
+   <!-- РОЗДІЛ "НАШІ РІШЕННЯ" -->
+<section class="py-5 py-lg-6 bg-white">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <!-- ТЕКСТ: на десктопе справа -->
+            <div class="col-lg-6 order-lg-2">
+                <p class="small text-primary mb-2 fw-semibold section-kicker">
+                    Наші рішення
+                </p>
+                <h2 class="h3 fw-semibold mb-3">
+                    Індивідуальні рішення для димососів та рекуперації тепла
+                </h2>
+                <p>
+                    Ми проєктуємо системи під конкретні задачі клієнта: від приватних
+                    камінів до промислових печей, харчової промисловості, готелів,
+                    ресторанів та виробничих підприємств.
+                </p>
+                <p>
+                    Наша мета — зробити існуючі енергосистеми більш ефективними,
+                    зменшити викиди та забезпечити стабільну роботу обладнання
+                    без компромісів щодо комфорту та безпеки.
+                </p>
+                <a href="contact.html" class="btn btn-primary mt-3">
+                    Налаштувати рішення під ваш об’єкт
+                </a>
+            </div>
+
+            <!-- КАРТИНКА: на десктопе слева -->
+            <div class="col-lg-6 order-lg-1">
+                <div class="info-image-wrapper">
+                    <img src="img/imgfire-1.jpg" alt="Рішення Exodraft для промисловості"
+                        class="img-fluid rounded-4 shadow-sm">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- РОЗДІЛ ПРО ДИМОСОСИ ТА ФІЛЬТРИ -->
+    <section class="py-5 py-lg-6 bg-light">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="info-image-wrapper">
+                        <img src="img/ANG2.jpg" alt="Димососи та фільтри"
+                            class="img-fluid rounded-4 shadow-sm">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <p class="small text-primary mb-2 fw-semibold section-kicker">
+                        Димососи та фільтри
+                    </p>
+                    <h2 class="h3 fw-semibold mb-3">
+                        Димососи та електростатичні фільтри
+                        для чистішого повітря
+                    </h2>
+                    <p>
+                        Димососи Exodraft покращують тягу в димоході, полегшують розпал,
+                        зменшують кількість диму та запаху в приміщенні та роблять
+                        горіння більш ефективним.
+                    </p>
+                    <p>
+                        Наші електростатичні фільтри суттєво знижують кількість
+                        шкідливих частинок у димових газах, захищаючи і здоров’я,
+                        і довкілля.
+                    </p>
+                    <a href="products/chimney-fans.html" class="btn btn-outline-primary mt-3 me-2">
+                        Димососи
+                    </a>
+                    <a href="products/particle-filters.html" class="btn btn-outline-secondary mt-3">
+                        Фільтри частинок
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- РОЗДІЛ ПРО РЕКУПЕРАЦІЮ ТЕПЛА -->
+    <section class="py-5 py-lg-6 bg-white">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="info-image-wrapper">
+                        <img src="img/pipes-1.jpg" alt="Рекуперація тепла"
+                            class="img-fluid rounded-4 shadow-sm">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <p class="small text-primary mb-2 fw-semibold section-kicker">
+                        Рекуперація тепла
+                    </p>
+                    <h2 class="h3 fw-semibold mb-3">
+                        Повторне використання енергії
+                        та зменшення витрат
+                    </h2>
+                    <p>
+                        Рішення з рекуперації тепла дозволяють повертати до 95% енергії
+                        з димових газів, вентиляції чи процесного повітря. Це означає
+                        менші рахунки за енергію та менший вуглецевий слід.
+                    </p>
+                    <p>
+                        Від промислових підприємств до централізованих тепломереж —
+                        ми допомагаємо інтегрувати рекуперацію у вже існуючі системи
+                        без втрати надійності.
+                    </p>
+                    <a href="products/heat-recovery.html" class="btn btn-primary mt-3">
+                        Рішення з рекуперації тепла
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТНИЙ БАННЕР -->
+<section class="contact-cta position-relative overflow-hidden py-5 py-lg-6">
+    <img src="img/imgfire-1.jpg"
+        alt="Камін та зелений сад"
+        class="contact-cta-bg">
+
+    <div class="contact-cta-overlay"></div>
+
+    <div class="container position-relative contact-cta-content">
+        <div class="row g-4">
+            <!-- ОДНА колонка с текстом и кнопкой -->
+            <div class="col-lg-8 col-xl-7 text-start">
+                <p class="text-uppercase small text-light mb-2">
+                    Зв’яжіться з нами
+                </p>
+
+                <h2 class="contact-cta-title fw-semibold text-white mb-3">
+                    Потрібно підібрати рішення для вашого об’єкту?
+                </h2>
+
+                <p class="contact-cta-text text-white mb-4">
+                    Розкажіть нам про свій проєкт — ми допоможемо обрати
+                    оптимальну комбінацію димососів, фільтрів та рекуперації тепла.
+                </p>
+
+                <!-- Кнопка ПОД текстом, слева -->
+                <a href="contact.html" class="btn btn-light btn-lg contact-cta-btn">
+                    Написати нам
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
