@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, ;
-    font-family: var(--font-sans);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    /* font-family: var(--font-sans); */
     color: #1f2933;
 }
 
@@ -601,4 +601,18 @@ footer {
     height:2px;
     background:#0d6efd;
     border-radius:2px;
+}
+
+
+@media (max-width: 576px){
+    .catalog-tabs,
+    .catalog-filter{
+    justify-content: flex-start !important;
+    width: 100%;
+    }
+}
+
+html{
+    scroll-padding-top: 90px;
+    scroll-behavior:smooth;
 }
