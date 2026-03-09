@@ -1,0 +1,65 @@
+<!-- HEADER -->
+<header class="site-header sticky-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 exo-navbar">
+        <div class="container position-relative">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/img/logo-exodraft.svg" alt="Exodraft" class="exo-logo">
+            </a>
+
+            <!-- Burger -->
+            <button class="navbar-toggler exo-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Меню">
+                <span class="exo-burger" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+
+
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <!-- Center menu -->
+                <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-5 exo-nav-center">
+                    <li class="nav-item">
+                        <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if '/products' in page.url %}active{% endif %}"
+                            href="/products/">Продукція</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if '/industry-commercial' in page.url %}active{% endif %}"
+                            href="/industry-commercial/">Індустрія та комерція</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if '/about' in page.url %}active{% endif %}" href="/about-us/">Про
+                            нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if '/contact' in page.url %}active{% endif %}"
+                            href="/contact/">Контакти</a>
+                    </li>
+                </ul>
+
+                <!-- CTA (desktop right) -->
+                <div class="d-none d-lg-flex position-absolute end-0 top-50 translate-middle-y header-cta">
+                    <a class="btn exo-cta " href="/contact/">
+                        Отримати консультацію
+                    </a>
+                </div>
+
+                <!-- CTA (mobile inside меню) -->
+                <div class="d-lg-none pt-2">
+                    <a class="btn exo-cta w-100 justify-content-center" href="/contact/">
+                        Отримати консультацію
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</header>

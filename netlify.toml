@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Чтобы фронт слал на /api/call-request (как у тебя), а Netlify направлял в функцию
+[[redirects]]
+  from = "/api/call-request"
+  to = "/.netlify/functions/call-request"
+  status = 200

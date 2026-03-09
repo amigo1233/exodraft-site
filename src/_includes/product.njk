@@ -1,0 +1,398 @@
+---
+layout: base.njk
+---
+
+{# =========================
+Universal Product Template
+========================= #}
+
+{# уникальные id для accordion, чтобы на странице не конфликтовало #}
+{% set accId = (page.fileSlug or "product") ~ "-acc" %}
+
+<section class="py-4 py-lg-5 bg-white product-page">
+    <div class="container">
+        <div class="row g-4 g-lg-5 align-items-start">
+
+            {# LEFT: gallery #}
+            <div class="col-12 col-lg-8">
+                {% set gCount = (gallery | length) %}
+                {% set isSingle = gCount <= 1 %} <div
+                    class="product-gallery product-gallery--dual {% if isSingle %}product-gallery--single{% endif %}"
+                    data-gallery>
+
+                    {# thumbs показываем только если фото > 1 #}
+                    {% if not isSingle %}
+                    <div class="product-gallery__thumbs" role="tablist" aria-label="Фото продукту">
+                        {% for img in gallery %}
+                        <button class="product-gallery__thumb {% if loop.first %}is-active{% endif %}" type="button"
+                            data-gallery-thumb data-target="img{{ loop.index }}" aria-label="Фото {{ loop.index }}">
+                            <img src="{{ img.thumb }}" alt="{{ img.thumbAlt or title ~ ' thumbnail ' ~ loop.index }}">
+                        </button>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div class="product-gallery__stage">
+                        {% for img in gallery %}
+                        <div class="product-gallery__big {% if loop.first %}is-active{% endif %}"
+                            data-gallery-frame="img{{ loop.index }}">
+                            <img src="{{ img.src }}" alt="{{ img.alt or title }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+
+            </div>
+        </div>
+
+        {# RIGHT: text #}
+        <div class="col-12 col-lg-4 ps-lg-5 ms-lg-auto">
+            {% if kicker %}
+            <p class="ic-kicker text-primary mb-2">{{ kicker }}</p>
+            {% endif %}
+
+            <h1 class="ic-title product-title-lg mb-3">{{ title }}</h1>
+
+            {% if lead %}
+            <div class="product-lead">
+                {{ lead | safe }}
+            </div>
+            {% endif %}
+
+            {% if cta %}
+            <div class="d-flex flex-wrap gap-2 mt-4">
+                {% for b in cta %}
+                <a href="{{ b.href }}" class="btn {{ b.class }}">
+                    {{ b.text }}{% if b.arrow %} <span class="exo-btn-pill__arrow">→</span>{% endif %}
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+    </div>
+</section>
+
+
+{# STATS (optional) #}
+{% if stats and stats.length %}
+<section class="py-5 py-lg-6 bg-white">
+    <div class="container">
+        <div class="row g-3 g-lg-4">
+            {% for s in stats %}
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="ic-stat-card h-100 text-center">
+                    <p class="ic-stat-card__kicker">{{ s.kicker }}</p>
+
+                    {% if s.isTextValue %}
+                    <div class="ic-stat-card__value" style="font-size: 1.35rem; line-height: 1.25;">
+                        {{ s.value }}
+                    </div>
+                    {% else %}
+                    <div class="ic-stat-card__value">
+                        {{ s.value }}{% if s.unit %}<span class="ic-stat-card__unit">{{ s.unit }}</span>{% endif %}
+                    </div>
+                    {% endif %}
+
+                    {% if s.note %}
+                    <p class="ic-stat-card__text small mb-0">{{ s.note }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+{# THE SYSTEM (optional) #}
+{% if system %}
+<section class="py-3 py-lg-4 bg-white">
+    <div class="container">
+        <div class="row align-items-center g-3">
+
+            <div class="col-12 col-lg-4 order-2 order-lg-1">
+                {% if system.kicker %}
+                <p class="ic-kicker text-primary mb-2">{{ system.kicker }}</p>
+                {% endif %}
+
+                {% if system.title %}
+                <h2 class="ic-title ic-title--xl product-system__heading mb-4">{{ system.title }}</h2>
+                {% endif %}
+
+                {% if system.items and system.items.length %}
+                <div class="product-system">
+                    {% for it in system.items %}
+                    <div class="product-system__item">
+                        <h3 class="product-system__title">{{ it.title }}</h3>
+                        <p class="product-system__text {% if loop.last %}mb-0{% endif %}">{{ it.text }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="col-12 col-lg-8 order-1 order-lg-2">
+                <div class="product-system-media product-system-media--plain">
+                    <img src="{{ system.image.src }}" alt="{{ system.image.alt or title }}"
+                        class="product-system-media__img">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+{# VIDEO (optional) #}
+{% if video and video.src %}
+<section class="py-5 py-lg-6 bg-white">
+    <div class="container">
+        <div class="product-media-stage product-media-stage--soft">
+            <div class="ratio ratio-16x9">
+                <video class="product-video" src="{{ video.src }}" {% if video.autoplay %}autoplay{% endif %} {% if
+                    video.loop %}loop{% endif %} {% if video.muted %}muted{% endif %} playsinline
+                    preload="metadata"></video>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+{# ACCORDIONS (optional, each section is optional) #}
+{% if accordion %}
+<section class="py-5 py-lg-6 bg-white">
+    <div class="container">
+        <div class="accordion product-accordion" id="{{ accId }}">
+
+            {# Description #}
+            {% if accordion.description %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="{{ accId }}-headingDesc">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#{{ accId }}-collapseDesc" aria-expanded="false"
+                        aria-controls="{{ accId }}-collapseDesc">
+                        {{ accordion.description.title or "Опис продукту" }}
+                    </button>
+                </h2>
+
+                <div id="{{ accId }}-collapseDesc" class="accordion-collapse collapse"
+                    aria-labelledby="{{ accId }}-headingDesc">
+                    <div class="accordion-body">
+                        <div class="pd-text">
+                            {{ accordion.description.html | safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {# Technical #}
+            {% if accordion.tech and accordion.tech.table %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="{{ accId }}-headingTech">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#{{ accId }}-collapseTech" aria-expanded="false"
+                        aria-controls="{{ accId }}-collapseTech">
+                        {{ accordion.tech.title or "Технічні дані" }}
+                    </button>
+                </h2>
+
+                <div id="{{ accId }}-collapseTech" class="accordion-collapse collapse"
+                    aria-labelledby="{{ accId }}-headingTech">
+                    <div class="accordion-body">
+                        <div class="pd-card">
+                            <div class="table-responsive">
+                                <table class="table product-tech-table align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            {% for h in accordion.tech.table.head %}
+                                            <th>{{ h | safe }}</th>
+                                            {% endfor %}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for row in accordion.tech.table.rows %}
+                                        <tr>
+                                            {% for cell in row %}
+                                            <td>{{ cell | safe }}</td>
+                                            {% endfor %}
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {# NOTE under table #}
+                        {% if accordion.tech.note %}
+                        <p class="pd-note small text-muted mt-3 mb-0">
+                            {{ accordion.tech.note | safe }}
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {# Downloads #}
+            {% if accordion.downloads and accordion.downloads.items and accordion.downloads.items.length %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="{{ accId }}-headingDown">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#{{ accId }}-collapseDown" aria-expanded="false"
+                        aria-controls="{{ accId }}-collapseDown">
+                        {{ accordion.downloads.title or "Завантаження" }}
+                    </button>
+                </h2>
+
+                <div id="{{ accId }}-collapseDown" class="accordion-collapse collapse"
+                    aria-labelledby="{{ accId }}-headingDown">
+                    <div class="accordion-body">
+                        <div class="pd-card">
+                            <div class="table-responsive">
+                                <table class="table product-downloads-table align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Файл</th>
+                                            <th>Назва файлу</th>
+                                            <th class="dl-size-col">Розмір</th>
+                                            <th class="text-end"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for d in accordion.downloads.items %}
+                                        <tr>
+                                            <td class="fw-semibold">
+                                                <span class="product-file-pill">{{ d.kind or "PDF" }}</span>
+                                                <span class="dl-file-label">{{ d.label }}</span>
+                                            </td>
+                                            <td>{{ d.filename }}</td>
+                                            <td class="dl-size-col">{{ d.size }}</td>
+                                            <td class="text-end">
+                                                <a class="dl-icon-btn" href="{{ d.href }}" target="_blank"
+                                                    rel="noopener" aria-label="Завантажити">
+                                                    <span class="dl-icon-btn__icon" aria-hidden="true"></span>
+                                                    <span class="dl-icon-btn__text">Завантажити</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {# Quick guide videos (ДОЛЖЕН БЫТЬ ВНУТРИ .accordion) #}
+            {% if accordion.quickVideos and accordion.quickVideos.items and accordion.quickVideos.items.length %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="{{ accId }}-headingQv">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#{{ accId }}-collapseQv" aria-expanded="false"
+                        aria-controls="{{ accId }}-collapseQv">
+                        {{ accordion.quickVideos.title or "Швидкі відеоінструкції" }}
+                    </button>
+                </h2>
+
+                <div id="{{ accId }}-collapseQv" class="accordion-collapse collapse"
+                    aria-labelledby="{{ accId }}-headingQv">
+                    <div class="accordion-body">
+                        <div class="pd-card">
+                            <div class="table-responsive">
+                                <table class="table product-downloads-table align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Файл</th>
+                                            <th>Назва файлу</th>
+                                            <th class="dl-size-col">Розмір</th>
+                                            <th class="text-end"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for v in accordion.quickVideos.items %}
+                                        <tr>
+                                            <td class="fw-semibold">
+                                                <span class="product-file-pill">{{ v.kind or "MP4" }}</span>
+                                                <span class="dl-file-label">{{ v.label }}</span>
+                                            </td>
+                                            <td>{{ v.filename }}</td>
+                                            <td class="dl-size-col">{{ v.size }}</td>
+                                            <td class="text-end">
+                                                <a class="dl-icon-btn" href="{{ v.href }}" target="_blank"
+                                                    rel="noopener" aria-label="Завантажити">
+                                                    <span class="dl-icon-btn__icon" aria-hidden="true"></span>
+                                                    <span class="dl-icon-btn__text">Завантажити</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+
+{# FAQ (optional) #}
+{% if faq and faq.items and faq.items.length %}
+{% set faqId = accId ~ "-faq" %}
+
+<section class="py-5 py-lg-6 bg-white product-faq">
+    <div class="container">
+        <div class="row g-4 g-lg-5 align-items-start">
+
+            {# LEFT: intro #}
+            <div class="col-12 col-lg-4">
+                <p class="ic-kicker text-primary mb-2">{{ faq.kicker or "ЗНАННЯ" }}</p>
+                <h2 class="ic-title mb-3">{{ faq.title or "FAQ" }}</h2>
+
+                {% if faq.text %}
+                <p class="product-lead mb-0">{{ faq.text }}</p>
+                {% endif %}
+            </div>
+
+            {# RIGHT: accordion #}
+            <div class="col-12 col-lg-8">
+                <div class="accordion product-accordion" id="{{ faqId }}">
+                    {% for it in faq.items %}
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="{{ faqId }}-h{{ loop.index }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#{{ faqId }}-c{{ loop.index }}" aria-expanded="false"
+                                aria-controls="{{ faqId }}-c{{ loop.index }}">
+                                {{ it.q }}
+                            </button>
+                        </h3>
+
+                        <div id="{{ faqId }}-c{{ loop.index }}" class="accordion-collapse collapse"
+                            aria-labelledby="{{ faqId }}-h{{ loop.index }}">
+                            <div class="accordion-body">
+                                <div class="pd-text">
+                                    {{ it.a | safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endif %}

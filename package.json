@@ -1,0 +1,31 @@
+{
+  "name": "exodraft-site",
+  "version": "1.0.0",
+  "description": "Exodraft static site (Eleventy + Nunjucks + Bootstrap 5.3.3)",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amigo1233/exodraft-site.git"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "nunjucks",
+    "bootstrap",
+    "static-site"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amigo1233/exodraft-site/issues"
+  },
+  "homepage": "https://github.com/amigo1233/exodraft-site#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
