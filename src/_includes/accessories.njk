@@ -1,0 +1,138 @@
+---
+layout: base.njk
+---
+
+
+
+<section class="py-4 py-lg-5 bg-white acc-hero">
+    <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center">
+
+            {# HERO IMAGE (left) #}
+            <div class="col-12 col-lg-7 d-flex justify-content-center justify-content-lg-center pe-lg-4">
+                <div class="acc-hero__media">
+                    <img class="acc-hero__img" src="{{ gallery[0].src }}" alt="{{ gallery[0].alt or title }}">
+                </div>
+            </div>
+
+            {# HERO TEXT (right) #}
+            <div class="col-12 col-lg-5 ps-lg-5 acc-hero__content">
+                {% if kicker %}
+                <p class="ic-kicker text-primary mb-2">{{ kicker }}</p>
+                {% endif %}
+
+                <h1 class="ic-title product-title-lg mb-3">{{ title }}</h1>
+
+                {% if cta %}
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    {% for b in cta %}
+                    <a href="{{ b.href }}" class="btn {{ b.class }}">
+                        {{ b.text }}{% if b.arrow %} <span class="exo-btn-pill__arrow">→</span>{% endif %}
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% if sections and sections.length %}
+{% for s in sections %}
+{# odd: image right, even: image left #}
+{% set imgRightOnDesktop = (loop.index % 2 == 1) %}
+
+<section class="acc-split bg-white">
+    <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center">
+
+            {# TEXT #}
+            <div class="col-12 col-lg-5 order-2 {% if imgRightOnDesktop %}order-lg-1{% else %}order-lg-2{% endif %}">
+                <div class="acc-card">
+                    <h2 class="acc-card__title">{{ s.title }}</h2>
+                    <div class="acc-card__text">
+                        {{ s.text | safe }}
+                    </div>
+                </div>
+            </div>
+
+            {# IMAGE #}
+            <div class="col-12 col-lg-7 order-1 {% if imgRightOnDesktop %}order-lg-2{% else %}order-lg-1{% endif %}">
+                <div class="acc-media">
+                    <img class="acc-media__img" src="{{ s.image.src }}" alt="{{ s.image.alt or s.title }}">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endfor %}
+{% endif %}
+
+
+{# =========================
+DOWNLOADS (accordion)
+========================= #}
+
+{% set accId = (page.fileSlug or "accessories") ~ "-acc" %}
+
+{% if accordion and accordion.downloads and accordion.downloads.items and accordion.downloads.items.length %}
+<section class="py-5 py-lg-6 bg-white">
+    <div class="container">
+        <div class="accordion product-accordion" id="{{ accId }}">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="{{ accId }}-headingDown">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#{{ accId }}-collapseDown" aria-expanded="false"
+                        aria-controls="{{ accId }}-collapseDown">
+                        {{ accordion.downloads.title or "Завантаження" }}
+                    </button>
+                </h2>
+
+                <div id="{{ accId }}-collapseDown" class="accordion-collapse collapse"
+                    aria-labelledby="{{ accId }}-headingDown">
+                    <div class="accordion-body">
+                        <div class="pd-card">
+                            <div class="table-responsive">
+                                <table class="table product-downloads-table align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Файл</th>
+                                            <th>Назва файлу</th>
+                                            <th class="dl-size-col">Розмір</th>
+                                            <th class="text-end"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for d in accordion.downloads.items %}
+                                        <tr>
+                                            <td class="fw-semibold">
+                                                <span class="product-file-pill">{{ d.kind or "PDF" }}</span>
+                                                <span class="dl-file-label">{{ d.label }}</span>
+                                            </td>
+                                            <td>{{ d.filename }}</td>
+                                            <td class="dl-size-col">{{ d.size }}</td>
+                                            <td class="text-end">
+                                                <a class="dl-icon-btn" href="{{ d.href }}" target="_blank"
+                                                    rel="noopener" aria-label="Завантажити">
+                                                    <span class="dl-icon-btn__icon" aria-hidden="true"></span>
+                                                    <span class="dl-icon-btn__text">Завантажити</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,136 @@
+---
+layout: base.njk
+title: Контакти — Exodraft
+---
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+            <div>
+                <h1 class="h3 fw-semibold mb-1">Контакти</h1>
+                <p class="text-muted mb-0">Зв’яжіться з нами — відповімо та підкажемо рішення.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Left: contact info -->
+            <div class="col-12 col-lg-5">
+                <div class="contact-card h-100">
+                    <h2 class="h5 fw-semibold mb-3">Exodraft</h2>
+
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-item__label">Телефон</div>
+                            <div>
+                                <a class="contact-item__value" href="tel:+380504148444">Тел./Fax: (050) 414-84-44</a>
+                            </div>
+                            <div>
+                                <a class="contact-item__value" href="tel:+380504682188">Моб.тел: (050) 468-21-88</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item__label">Email</div>
+                            <a class="contact-item__value" href="mailto:vd@schiedel.kiev.ua">vd@schiedel.kiev.ua</a>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item__label">Адреса</div>
+                            <div class="contact-item__value">
+                                Київ, вул. Васильківська, 14, оф.603
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 d-flex flex-column gap-3 contact-actions">
+                        <button type="button" class="btn exo-btn-pill exo-btn-pill--primary exo-btn-call" data-bs-toggle="modal"
+                            data-bs-target="#callModal">
+                            Замовити дзвінок
+                            <img src="/img/logo/telephone.png" alt="" class="btn-icon">
+                        </button>
+
+                        <a class="btn exo-btn-pill exo-btn-pill--light" href="/products/">
+                            Переглянути продукцію <span class="exo-btn-pill__arrow">→</span>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Right: map -->
+            <div class="col-12 col-lg-7">
+                <div class="contact-card contact-card--map h-100">
+                    <h2 class="h6 fw-semibold mb-3">Ми на мапі</h2>
+
+                    <div class="map-embed">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1266.7497909892554!2d30.499979727248437!3d50.3957325658955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c8cec7fd7fb3%3A0xa1404ef26790e3de!2z0LLRg9C70LjRhtGPINCS0LDRgdC40LvRjNC60ZbQstGB0YzQutCwLCAxNCwgNjAzLCDQmtC40ZfQsiwg0KPQutGA0LDQuNC90LAsIDAyMDAw!5e1!3m2!1sru!2sse!4v1771233537011!5m2!1sru!2sse"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade" id="callModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title h5 mb-0">Замовити дзвінок</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <!-- ✅ ЭТОТ wrapper будет скрываться при успехе -->
+                <div id="callContent">
+                    <p class="text-muted mb-3">
+                        Залиште свої контактні дані і ми зателефонуємо вам протягом 15 хвилин.
+                    </p>
+
+                    <form id="callForm" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label">Ім’я</label>
+                            <input class="form-control" name="name" autocomplete="name" required maxlength="80">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Номер телефону</label>
+                            <input class="form-control" name="phone" autocomplete="tel" required inputmode="tel"
+                                placeholder="+380..." maxlength="30">
+                        </div>
+
+                        <div id="callFormMsg" class="small mb-2"></div>
+
+                        <div class="d-none">
+                            <label>Leave empty</label>
+                            <input type="text" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Надіслати заявку
+                        </button>
+                    </form>
+                </div>
+
+                <!-- ✅ А это показываем при успехе -->
+                <div id="callSuccess" class="call-success" hidden>
+                    <div class="call-success__icon" aria-hidden="true">
+                        <svg class="call-success__check" viewBox="0 0 52 52">
+                            <circle class="call-success__circle" cx="26" cy="26" r="25" fill="none"></circle>
+                            <path class="call-success__path" fill="none" d="M14 27.5 L22 35 L38 18"></path>
+                        </svg>
+                    </div>
+                    <div class="call-success__title">Готово!</div>
+                    <div class="call-success__text">Ми зателефонуємо вам протягом 15 хвилин.</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

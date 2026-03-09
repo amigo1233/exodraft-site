@@ -1,21 +1,33 @@
 <!doctype html>
 <html lang="uk">
+
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });
+    gtag('js', new Date());
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QNWPN6XGQ"></script>
+  <script>
+    gtag('config', 'G-7QNWPN6XGQ', { send_page_view: false });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Продукція — Exodraft</title>
 
   <!-- Bootstrap 5 CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
 
   <!-- Твой CSS (ВАЖНО: абсолютный путь) -->
@@ -26,45 +38,69 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-
+  <div class="header-topline" aria-hidden="true"></div>
   
   <!-- HEADER -->
 <header class="site-header sticky-header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="/">
-                <img src="/img/logo-exodraft.svg" alt="Exodraft" height="31">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 exo-navbar">
+        <div class="container position-relative">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/img/logo-exodraft.svg" alt="Exodraft" class="exo-logo">
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mainNavbar" aria-controls="mainNavbar"
-                    aria-expanded="false" aria-label="Перемикач навігації">
-                <span class="navbar-toggler-icon"></span>
+            <!-- Burger -->
+            <button class="navbar-toggler exo-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Меню">
+                <span class="exo-burger" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
             </button>
 
+
+
             <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+
+                <!-- Center menu -->
+                <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-5 exo-nav-center">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Головна</a>
+                        <a class="nav-link " href="/">Головна</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/products/">Продукція</a>
+                        <a class="nav-link active"
+                            href="/products/">Продукція</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/industry-commercial/">Індустрія та комерція</a>
+                        <a class="nav-link "
+                            href="/industry-commercial/">Індустрія та комерція</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about/">Про компанію</a>
+                        <a class="nav-link " href="/about-us/">Про
+                            нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact/">Контакти</a>
-                    </li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-primary px-4" href="/contact/">
-                            Отримати консультацію
-                        </a>
+                        <a class="nav-link "
+                            href="/contact/">Контакти</a>
                     </li>
                 </ul>
+
+                <!-- CTA (desktop right) -->
+                <div class="d-none d-lg-flex position-absolute end-0 top-50 translate-middle-y header-cta">
+                    <a class="btn exo-cta " href="/contact/">
+                        Отримати консультацію
+                    </a>
+                </div>
+
+                <!-- CTA (mobile inside меню) -->
+                <div class="d-lg-none pt-2">
+                    <a class="btn exo-cta w-100 justify-content-center" href="/contact/">
+                        Отримати консультацію
+                    </a>
+                </div>
+
             </div>
         </div>
     </nav>
@@ -73,74 +109,6 @@
   
   <main class="flex-grow-1">
     
-
-
-    <section class="inner-hero position-relative overflow-hidden">
-        <img src="/img/imgfire-1.jpg"
-            alt="Продукція Exodraft"
-            class="inner-hero__bg">
-        <div class="inner-hero__overlay"></div>
-
-        <div class="container position-relative">
-            <div class="row align-items-center">
-                <div class="col-lg-7 col-xl-6">
-                    <p class="section-kicker mb-2">Продукція</p>
-                    <h1 class="display-5 fw-bold mb-3">
-                        Системи димовидалення, фільтрації<br class="d-none d-lg-block">
-                        та рекуперації тепла
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5 bg-white">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-12 col-md-6 col-xl-3">
-                    <a href="#chimney-fans" class="category-card h-100">
-                        <p class="category-card__kicker">Категорія</p>
-                        <h2 class="category-card__title">Димососи та вентилятори</h2>
-                        <p class="category-card__text">
-                            Рішення для стабільної тяги димоходу, кращого горіння
-                            та зменшення диму в приміщенні.
-                        </p>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 col-xl-3">
-                    <a href="#controls" class="category-card h-100">
-                        <p class="category-card__kicker">Категорія</p>
-                        <h2 class="category-card__title">Керування та автоматика</h2>
-                        <p class="category-card__text">
-                            Панелі керування, кімнатні пульти та контролери
-                            для зручного керування системами Exodraft.
-                        </p>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 col-xl-3">
-                    <a href="#plates-filters" class="category-card h-100">
-                        <p class="category-card__kicker">Категорія</p>
-                        <h2 class="category-card__title">Теплообмінники та фільтри</h2>
-                        <p class="category-card__text">
-                            Пластинчасті теплообмінники та електростатичні фільтри
-                            для зменшення викидів і повернення тепла в систему.
-                        </p>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 col-xl-3">
-                    <a href="#accessories" class="category-card h-100">
-                        <p class="category-card__kicker">Категорія</p>
-                        <h2 class="category-card__title">Аксесуари</h2>
-                        <p class="category-card__text">
-                            Додаткові елементи та аксесуари для інтеграції
-                            систем Exodraft у ваші проєкти.
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ДИМОСОСИ -->
     <section id="chimney-fans" class="products-section bg-light">
         <div class="container">
@@ -160,7 +128,7 @@
                 <div class="product-carousel__track" data-carousel-track>
 
                     <!-- 1 -->
-                    <a class="product-card product-card--link" href="products/draftbooster.html" data-orientation="vertical">
+                    <a class="product-card product-card--link" href="/products/draftbooster/" data-orientation="vertical">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RBV1_schwarz-DE-300x300.png" alt="Draftbooster" class="product-card__image">
                         </div>
@@ -171,7 +139,7 @@
                     </a>
 
                     <!-- 2 -->
-                    <a class="product-card product-card--link" href="products/rsv.html" data-orientation="vertical">
+                    <a class="product-card product-card--link" href="/products/rsv/" data-orientation="vertical">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RSVRSVG-600x472.png" alt="RSV" class="product-card__image">
                         </div>
@@ -182,7 +150,7 @@
                     </a>
 
                     <!-- 3 -->
-                    <a class="product-card product-card--link" href="products/rs-009-016.html" data-orientation="horizontal">
+                    <a class="product-card product-card--link" href="/products/rs-009-016/" data-orientation="horizontal">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RSRSHG-600x567.png" alt="RS (009-016)" class="product-card__image">
                         </div>
@@ -193,7 +161,7 @@
                     </a>
 
                     <!-- 4 -->
-                    <a class="product-card product-card--link" href="products/rs255-285.html" data-orientation="horizontal">
+                    <a class="product-card product-card--link" href="/products/rs255-285/" data-orientation="horizontal">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RS255-285-600x510.png" alt="RS255-285" class="product-card__image">
                         </div>
@@ -204,7 +172,7 @@
                     </a>
 
                     <!-- 5 -->
-                    <a class="product-card product-card--link" href="products/rsht.html" data-orientation="horizontal">
+                    <a class="product-card product-card--link" href="/products/rsht/" data-orientation="horizontal">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RSHT-600x648.png" alt="RSHT" class="product-card__image">
                         </div>
@@ -215,7 +183,7 @@
                     </a>
 
                     <!-- 6 -->
-                    <a class="product-card product-card--link" href="products/gsv.html" data-orientation="vertical">
+                    <a class="product-card product-card--link" href="/products/gsv/" data-orientation="vertical">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/GSV-600x454.png" alt="GSV" class="product-card__image">
                         </div>
@@ -226,7 +194,7 @@
                     </a>
 
                     <!-- 7 -->
-                    <a class="product-card product-card--link" href="products/rsvg.html" data-orientation="vertical">
+                    <a class="product-card product-card--link" href="/products/rsvg/" data-orientation="vertical">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RSVRSVG-600x472.png" alt="RSVG" class="product-card__image">
                         </div>
@@ -237,7 +205,7 @@
                     </a>
 
                     <!-- 8 -->
-                    <a class="product-card product-card--link" href="products/rshg.html" data-orientation="horizontal">
+                    <a class="product-card product-card--link" href="/products/rshg/" data-orientation="horizontal">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RSRSHG-600x567.png" alt="RSHG" class="product-card__image">
                         </div>
@@ -248,7 +216,7 @@
                     </a>
 
                     <!-- 9 -->
-                    <a class="product-card product-card--link" href="products/rhg.html" data-orientation="horizontal">
+                    <a class="product-card product-card--link" href="/products/rhg/" data-orientation="horizontal">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RHG-600x518.png" alt="RHG" class="product-card__image">
                         </div>
@@ -259,7 +227,7 @@
                     </a>
 
                     <!-- 10 -->
-                    <a class="product-card product-card--link" href="products/rhgc.html" data-orientation="horizontal">
+                    <a class="product-card product-card--link" href="/products/rhgc/" data-orientation="horizontal">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RHGC-600x649.png" alt="RHGC" class="product-card__image">
                         </div>
@@ -270,7 +238,7 @@
                     </a>
 
                     <!-- 11 -->
-                    <a class="product-card product-card--link" href="products/rsg.html" data-orientation="vertical">
+                    <a class="product-card product-card--link" href="/products/rsg/" data-orientation="vertical">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Chimney-fans/RSG-UKNOSE-600x614.png" alt="RSG" class="product-card__image">
                         </div>
@@ -316,7 +284,7 @@
             <div class="product-carousel" data-carousel>
                 <div class="product-carousel__track" data-carousel-track>
 
-                    <a class="product-card product-card--link" href="products/xzense.html">
+                    <a class="product-card product-card--link" href="/products/xzense/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/Xzense-600x532.png" alt="Xzense" class="product-card__image">
                         </div>
@@ -325,7 +293,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/efc15.html">
+                    <a class="product-card product-card--link" href="/products/efc15/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EFC15-600x692.png" alt="EFC15" class="product-card__image">
                         </div>
@@ -334,7 +302,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/efc16.html">
+                    <a class="product-card product-card--link" href="/products/efc16/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EFC16-600x607.png" alt="EFC16" class="product-card__image">
                         </div>
@@ -343,7 +311,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/efc18.html">
+                    <a class="product-card product-card--link" href="/products/efc18/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EFC18-600x635.png" alt="EFC18" class="product-card__image">
                         </div>
@@ -352,7 +320,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/efc21.html">
+                    <a class="product-card product-card--link" href="/products/efc21/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EFC21-600x505.png" alt="EFC21" class="product-card__image">
                         </div>
@@ -361,7 +329,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/efc35s.html">
+                    <a class="product-card product-card--link" href="/products/efc35s/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EFC15-600x692.png" alt="EFC35S" class="product-card__image">
                         </div>
@@ -370,7 +338,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/ehc20.html">
+                    <a class="product-card product-card--link" href="/products/ehc20/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EHC20-600x600.png" alt="EHC20" class="product-card__image">
                         </div>
@@ -379,7 +347,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/eahc21.html">
+                    <a class="product-card product-card--link" href="/products/eahc21/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EAHC21-600x894.png" alt="EAHC21" class="product-card__image">
                         </div>
@@ -388,7 +356,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/ebc24.html">
+                    <a class="product-card product-card--link" href="/products/ebc24/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EBC24-600x646.png" alt="EBC24" class="product-card__image">
                         </div>
@@ -397,7 +365,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/ebc22.html">
+                    <a class="product-card product-card--link" href="/products/ebc22/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EBC22-600x592.png" alt="EBC22" class="product-card__image">
                         </div>
@@ -406,7 +374,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/ebc10v2.html">
+                    <a class="product-card product-card--link" href="/products/ebc10v2/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Controls/EBC10v2-600x706.png" alt="EBC10v2" class="product-card__image">
                         </div>
@@ -449,7 +417,7 @@
             </div>
 
             <div class="products-grid">
-                <a class="product-card product-card--link" href="products/particle-filter-esp-10.html">
+                <a class="product-card product-card--link" href="/products/particle-filter-esp-10/">
                     <div class="product-card__image-wrapper">
                         <img src="/img/products/Particle-filters/ESP-10-BLACK-1-600x600.png"
                             alt="Particle filter ESP-10"
@@ -460,7 +428,7 @@
                     </div>
                 </a>
 
-                <a class="product-card product-card--link" href="products/particle-filter-esp-25.html">
+                <a class="product-card product-card--link" href="/products/particle-filter-esp-25/">
                     <div class="product-card__image-wrapper">
                         <img src="/img/products/Particle-filters/ESP-25-600x785.png"
                             alt="Particle filter ESP-25"
@@ -486,7 +454,7 @@
             <div class="product-carousel" data-carousel>
                 <div class="product-carousel__track" data-carousel-track>
 
-                    <a class="product-card product-card--link" href="products/basic-plate-250-2000.html">
+                    <a class="product-card product-card--link" href="/products/basic-plate-250-2000/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Heat-recovery/Basic-Plate.png" alt="Basic Plate 250-2000" class="product-card__image">
                         </div>
@@ -495,7 +463,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/safe-plate-80-500.html">
+                    <a class="product-card product-card--link" href="/products/safe-plate-80-500/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Heat-recovery/Safe-Plate-600x476.png" alt="Safe Plate 80-500" class="product-card__image">
                         </div>
@@ -504,7 +472,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/cfir.html">
+                    <a class="product-card product-card--link" href="/products/cfir/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Heat-recovery/CFIR-600x500.png" alt="CFIR" class="product-card__image">
                         </div>
@@ -513,7 +481,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/bypass-damper.html">
+                    <a class="product-card product-card--link" href="/products/bypass-damper/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Heat-recovery/bypass-damper-600x600.png" alt="Bypass Damper" class="product-card__image">
                         </div>
@@ -522,7 +490,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/damper-motor.html">
+                    <a class="product-card product-card--link" href="/products/damper-motor/">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Heat-recovery/jalousi-spjaeld-damper-motor-600x603.png" alt="Damper Motor" class="product-card__image">
                         </div>
@@ -570,7 +538,7 @@
             <div class="product-carousel" data-carousel>
                 <div class="product-carousel__track" data-carousel-track>
 
-                    <a class="product-card product-card--link" href="products/bypass-damper.html" data-filter-item="heat">
+                    <a class="product-card product-card--link" href="/products/bypass-damper/" data-filter-item="heat">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Heat-recovery/bypass-damper-600x600.png" alt="Bypass Damper" class="product-card__image">
                         </div>
@@ -579,7 +547,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/damper-motor.html" data-filter-item="heat">
+                    <a class="product-card product-card--link" href="/products/damper-motor/" data-filter-item="heat">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Heat-recovery/jalousi-spjaeld-damper-motor-600x603.png" alt="Damper Motor" class="product-card__image">
                         </div>
@@ -588,7 +556,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/accessories-chimney-fans.html" data-filter-item="chimney">
+                    <a class="product-card product-card--link" href="/products/accessories-for-chimney-fans/" data-filter-item="chimney">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Accessories/gasmagnetventiler-1-600x860.png" alt="Accessories for chimney fans" class="product-card__image">
                         </div>
@@ -597,7 +565,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/accessories-heat-recovery.html" data-filter-item="heat">
+                    <a class="product-card product-card--link" href="/products/accessories-for-heat-recovery/" data-filter-item="heat">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Accessories/temperaturmaaler-600x599.png" alt="Accessories for Heat Recovery" class="product-card__image">
                         </div>
@@ -606,7 +574,7 @@
                         </div>
                     </a>
 
-                    <a class="product-card product-card--link" href="products/flanges-and-mounting-accessories.html" data-filter-item="chimney">
+                    <a class="product-card product-card--link" href="/products/flanges-and-mounting-accessories/" data-filter-item="chimney">
                         <div class="product-card__image-wrapper">
                             <img src="/img/products/Accessories/flange-600x350.png" alt="Flanges and mounting accessories" class="product-card__image">
                         </div>
@@ -638,39 +606,37 @@
 
 
 
-        <!-- КОНТАКТНИЙ БАННЕР -->
-    <section class="contact-cta position-relative overflow-hidden py-5 py-lg-6">
-        <img src="/img/imgfire-1.jpg"
-            alt="Камін та зелений сад"
-            class="contact-cta-bg">
+<!-- КОНТАКТНИЙ БАННЕР -->
+<section class="contact-cta position-relative overflow-hidden py-5 py-lg-6">
+    <img src="/img/imgfire-1.jpg" alt="Камін та зелений сад" class="contact-cta-bg">
 
-        <div class="contact-cta-overlay"></div>
+    <div class="contact-cta-overlay"></div>
 
-        <div class="container position-relative contact-cta-content">
-            <div class="row g-4">
-                <!-- ОДНА колонка с текстом и кнопкой -->
-                <div class="col-lg-8 col-xl-7 text-start">
-                    <p class="text-uppercase small text-light mb-2">
-                        Зв’яжіться з нами
-                    </p>
+    <div class="container position-relative contact-cta-content">
+        <div class="row g-4">
+            <!-- ОДНА колонка с текстом и кнопкой -->
+            <div class="col-lg-8 col-xl-7 text-start">
+                <p class="text-uppercase small text-white mb-2 contact-cta-text">
+                    exodraft
+                </p>
 
-                    <h2 class="contact-cta-title fw-semibold text-white mb-3">
-                        Потрібно підібрати рішення для вашого об’єкту?
-                    </h2>
+                <h2 class="contact-cta-title fw-semibold text-white mb-3">
+                    Потрібно підібрати рішення для вашого об’єкту?
+                </h2>
 
-                    <p class="contact-cta-text text-white mb-4">
-                        Розкажіть нам про свій проєкт — ми допоможемо обрати
-                        оптимальну комбінацію димососів, фільтрів та рекуперації тепла.
-                    </p>
 
-                    <!-- Кнопка ПОД текстом, слева -->
-                    <a href="contact.html" class="btn btn-light btn-lg contact-cta-btn">
-                        Написати нам
-                    </a>
-                </div>
+                <!-- Кнопка ПОД текстом, слева -->
+                <a href="/contact/" class="btn exo-btn-pill exo-btn-pill--glass">
+                    Написати нам <span class="exo-btn-pill__arrow">→</span>
+                </a>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
 
 
   </main>
@@ -687,7 +653,7 @@
                 </div>
                 <div class="footer-text small">
                     <p class="mb-1">ТОВ «Exodraft Ukraine»</p>
-                    <p class="mb-1">Київ, вул. Є.Сверстюка, 11б, оф.310</p>
+                    <p class="mb-1">Київ, вул. Васильківська, 14, оф.603</p>
                     <p class="mb-1">Тел./Fax: (050) 414-84-44</p>
                     <p class="mb-1">Моб.тел: (050) 468-21-88</p>
                     <p class="mb-0">
@@ -700,9 +666,11 @@
             <div class="col-6 col-md-3 col-lg-2">
                 <h5 class="footer-heading">Продукція</h5>
                 <ul class="list-unstyled footer-links">
-                    <li><a href="products/chimney-fans.html">Димососи</a></li>
-                    <li><a href="products/particle-filters.html">Фільтри частинок</a></li>
-                    <li><a href="products/heat-recovery.html">Рекуперація тепла</a></li>
+                    <li><a href="/products/#chimney-fans">Димососи</a></li>
+                    <li><a href="/products/#controls">Керування</a></li>
+                    <li><a href="/products/#plates-filters">Електростатичні фільтри</a></li>
+                    <li><a href="/products/#heat-recovery">Рекуперація тепла</a></li>
+                    <li><a href="/products/#accessories">Аксесуари</a></li>
                 </ul>
             </div>
 
@@ -710,7 +678,7 @@
             <div class="col-6 col-md-3 col-lg-3">
                 <h5 class="footer-heading">Компанія</h5>
                 <ul class="list-unstyled footer-links">
-                    <li><a href="/about/">Про нас</a></li>
+                    <li><a href="/about-us/">Про нас</a></li>
                     <li><a href="/contact/">Контакти</a></li>
                 </ul>
             </div>
@@ -721,18 +689,37 @@
     <div class="site-footer__bottom">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small">
             <span>© 2026 Exodraft Ukraine.</span>
-            <span class="text-muted">
-                Cookies &amp; data policy (буде додано пізніше)
-            </span>
+            <a class="text-muted text-decoration-none" href="/cookie-and-privacy/">
+                Cookies &amp; data policy
+            </a>
         </div>
     </div>
 </footer>
 
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Cookie banner (UA) -->
+  <div id="cookieBanner" class="cookie-banner" hidden>
+    <div class="cookie-banner__inner container">
+      <div class="cookie-banner__content">
+        <div class="cookie-banner__title">Ми використовуємо файли cookie</div>
+        <div class="cookie-banner__text">
+          Ми застосовуємо cookie для аналітики, щоб розуміти, які сторінки корисні та як покращити
+          сайт.<br>
+          Ви можете прийняти або відхилити аналітичні cookie.
+          <a href="/cookie-and-privacy/" class="cookie-banner__link">Політика конфіденційності</a>.
+        </div>
+      </div>
 
+      <div class="cookie-banner__actions">
+        <button class="btn btn-light btn-sm cookie-btn" data-cookie="reject">Відхилити</button>
+        <button class="btn btn-primary btn-sm cookie-btn" data-cookie="accept">Прийняти</button>
+      </div>
+    </div>
+  </div>
   
   <script src="/js/main.js"></script>
 
 </body>
+
 </html>
