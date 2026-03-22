@@ -1,0 +1,71 @@
+/* ===== Cookie banner centered (modal style) ===== */
+.cookie-banner[hidden] {
+        display: none !important;
+}
+
+.cookie-banner {
+        position: fixed;
+        inset: 0;
+        /* top/right/bottom/left = 0 */
+        z-index: 1080;
+        display: flex;
+        align-items: center;
+        /* вертикально по центру */
+        justify-content: center;
+        /* горизонтально по центру */
+        padding: 16px;
+        background: rgba(15, 23, 42, .55);
+        /* затемнение */
+        backdrop-filter: blur(6px);
+}
+
+.cookie-banner__inner {
+        width: min(720px, 100%);
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .10);
+        border-radius: 16px;
+        padding: 18px 20px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, .18);
+
+        display: flex;
+        flex-direction: column;
+        /* <-- текст сверху, кнопки снизу */
+        gap: 14px;
+}
+
+.cookie-banner__title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 6px;
+}
+
+.cookie-banner__text {
+        font-size: 14px;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, .78);
+}
+
+.cookie-banner__actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        /* <-- кнопки по центру */
+}
+
+.cookie-btn {
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+        .cookie-banner__inner {
+                flex-direction: column;
+                align-items: stretch;
+        }
+
+        .cookie-banner__actions .btn {
+                width: 100%;
+        }
+}

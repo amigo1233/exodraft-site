@@ -99,7 +99,7 @@ accordion:
         href: "/files/datasheets/chimney-fans/rsht/Datasheet__RSHT_UK.pdf"
       - kind: "PDF"
         label: "Інструкція"
-        filename: "Manual_RSHT_UK.pdf"
+        filename: "Manual-RSHT-RU.pdf"
         size: "2 MB"
-        href: "/files/datasheets/chimney-fans/rsht/Manual_RSHT_UK.pdf"
+        href: "/files/datasheets/chimney-fans/rsht/Manual-RSHT-RU.pdf"
 ---

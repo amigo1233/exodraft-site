@@ -1,6 +1,24 @@
 <!-- HEADER -->
-<header class="site-header sticky-header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 exo-navbar">
+<header class="site-header sticky-header {% if solidHeader %}header--solid{% else %}header--transparent{% endif %}">
+
+
+    <!-- Top bar -->
+    <div class="exo-topbar d-none d-lg-block">
+        <div class="container">
+            <div class="exo-topbar-inner">
+                <nav class="exo-topbar-nav" aria-label="Додаткове меню">
+                    <a class="exo-topbar-link {% if '/about' in page.url %}active{% endif %}" href="/about-us/">Про
+                        нас</a>
+                    <a class="exo-topbar-link {% if '/contact' in page.url %}active{% endif %}"
+                        href="/contact/">Контакти</a>
+                    <a class="exo-topbar-link" href="/files/datasheets/price-list/Exodraft_price_05.01.2026-3.pdf"
+                        target="_blank" rel="noopener">Прайс лист</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light exo-navbar">
         <div class="container position-relative">
 
             <!-- Logo -->
@@ -9,8 +27,8 @@
             </a>
 
             <!-- Burger -->
-            <button class="navbar-toggler exo-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Меню">
+            <button class="navbar-toggler exo-toggler" type="button" aria-controls="mainNavbar" aria-expanded="false"
+                aria-label="Меню" data-mobile-header-toggle>
                 <span class="exo-burger" aria-hidden="true">
                     <span></span>
                     <span></span>
@@ -18,47 +36,227 @@
                 </span>
             </button>
 
+            <div class="navbar-collapse exo-navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0 align-items-lg-center exo-nav-center">
 
+                    <!-- Димососи -->
+                    <li class="nav-item nav-item-dropdown">
+                        <a class="nav-link exo-desktop-link {% if '/chimney-fans' in page.url %}active{% endif %}"
+                            href="/chimney-fans/">
+                            Димососи <span class="exo-nav-caret"></span>
+                        </a>
 
-            <div class="collapse navbar-collapse" id="mainNavbar">
+                        <div class="exo-mobile-row d-lg-none">
+                            <a class="nav-link exo-mobile-link {% if '/chimney-fans' in page.url %}active{% endif %}"
+                                href="/chimney-fans/">
+                                Димососи
+                            </a>
 
-                <!-- Center menu -->
-                <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-5 exo-nav-center">
-                    <li class="nav-item">
-                        <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/">Головна</a>
+                            <button class="exo-mobile-toggle exo-mobile-toggle-arrow" type="button"
+                                aria-expanded="false" data-mobile-menu-target="mobile-submenu-1"
+                                aria-label="Відкрити підменю Димососи">
+                                <span class="exo-nav-caret"></span>
+                            </button>
+                        </div>
+
+                        <div class="exo-dropdown-panel">
+                            <div class="exo-dropdown-inner">
+                                <div class="exo-dropdown-label">Димососи</div>
+                                <ul class="exo-dropdown-list">
+                                    <li><a href="/chimney-fans/chimney-fans-for-solid-fuel/">Димососи для твердого
+                                            палива</a></li>
+                                    <li><a href="/chimney-fans/chimney-fans-for-gas/">Димососи для газу</a></li>
+                                    <li><a href="/products/">Продукти</a></li>
+                                    <li><a href="/controls/">Керування</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exo-mobile-submenu" id="mobile-submenu-1">
+                            <ul class="exo-mobile-submenu-list">
+                                <li><a href="/chimney-fans/chimney-fans-for-solid-fuel/">Димососи для твердого
+                                        палива</a></li>
+                                <li><a href="/chimney-fans/chimney-fans-for-gas/">Димососи для газу</a></li>
+                                <li><a href="/products/">Продукти</a></li>
+                                <li><a href="/controls/">Керування</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if '/products' in page.url %}active{% endif %}"
-                            href="/products/">Продукція</a>
+
+                    <!-- Електростатичні фільтри -->
+                    <li class="nav-item nav-item-dropdown">
+                        <a class="nav-link exo-desktop-link {% if '/particle-filters' in page.url %}active{% endif %}"
+                            href="/particle-filters">
+                            Електростатичні фільтри <span class="exo-nav-caret"></span>
+                        </a>
+
+                        <div class="exo-mobile-row">
+                            <a class="nav-link exo-mobile-link {% if '/particle-filters' in page.url %}active{% endif %}"
+                                href="/particle-filters">
+                                Електростатичні фільтри
+                            </a>
+
+                            <button class="exo-mobile-toggle" type="button" aria-expanded="false"
+                                data-mobile-menu-target="mobile-submenu-2"
+                                aria-label="Відкрити підменю Електростатичні фільтри">
+                                <span class="exo-nav-caret"></span>
+                            </button>
+                        </div>
+
+                        <div class="exo-dropdown-panel">
+                            <div class="exo-dropdown-inner">
+                                <div class="exo-dropdown-label">Електростатичні фільтри</div>
+                                <ul class="exo-dropdown-list">
+                                    <li><a href="/products/particle-filter-esp-10/">Електростатичний фільтр ESP-10</a>
+                                    </li>
+                                    <li><a href="/products/particle-filter-esp-25/">Електростатичний фільтр ESP-25</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exo-mobile-submenu" id="mobile-submenu-2">
+                            <ul class="exo-mobile-submenu-list">
+                                <li><a href="/products/particle-filter-esp-10/">Електростатичний фільтр ESP-10</a></li>
+                                <li><a href="/products/particle-filter-esp-25/">Електростатичний фільтр ESP-25</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if '/industry-commercial' in page.url %}active{% endif %}"
-                            href="/industry-commercial/">Індустрія та комерція</a>
+
+                    <!-- Рекуперація тепла -->
+                    <li class="nav-item nav-item-dropdown">
+                        <a class="nav-link exo-desktop-link {% if '/heat-recovery' in page.url %}active{% endif %}"
+                            href="/heat-recovery/">
+                            Рекуперація тепла <span class="exo-nav-caret"></span>
+                        </a>
+
+                        <div class="exo-mobile-row d-lg-none">
+                            <a class="nav-link exo-mobile-link {% if '/heat-recovery' in page.url %}active{% endif %}"
+                                href="/heat-recovery/">
+                                Рекуперація тепла
+                            </a>
+
+                            <button class="exo-mobile-toggle exo-mobile-toggle-arrow" type="button"
+                                aria-expanded="false" data-mobile-menu-target="mobile-submenu-3"
+                                aria-label="Відкрити підменю Рекуперація тепла">
+                                <span class="exo-nav-caret"></span>
+                            </button>
+                        </div>
+
+                        <div class="exo-dropdown-panel">
+                            <div class="exo-dropdown-inner">
+                                <div class="exo-dropdown-label">Рекуперація тепла</div>
+                                <ul class="exo-dropdown-list">
+                                    <li><a href="/industry-commercial/">Індустрія та комерція</a></li>
+                                    <li><a href="/heat-recovery/heat-recovery-units/">Установки рекуперації тепла</a></li>
+                                    <li><a href="/heat-recovery/heat-recovery-systems/">Системи рекуперації тепла</a></li>
+                                    <li><a href="/heat-recovery/">Рекуперація тепла</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exo-mobile-submenu" id="mobile-submenu-3">
+                            <ul class="exo-mobile-submenu-list">
+                                <li><a href="/industry-commercial/">Індустрія та комерція</a></li>
+                                <li><a href="/heat-recovery/heat-recovery-units/">Установки рекуперації тепла</a></li>
+                                <li><a href="/heat-recovery/heat-recovery-systems/">Системи рекуперації тепла</a></li>
+                                <li><a href="/heat-recovery/">Рекуперація тепла</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if '/about' in page.url %}active{% endif %}" href="/about-us/">Про
-                            нас</a>
+
+                    <!-- Індустрія та комерція -->
+                    <li class="nav-item nav-item-dropdown">
+                        <a class="nav-link exo-desktop-link {% if '/industry-commercial' in page.url %}active{% endif %}"
+                            href="/industry-commercial/">
+                            Індустрія та комерція <span class="exo-nav-caret"></span>
+                        </a>
+
+                        <div class="exo-mobile-row d-lg-none">
+                            <a class="nav-link exo-mobile-link {% if '/industry-commercial' in page.url %}active{% endif %}"
+                                href="/industry-commercial/">
+                                Індустрія та комерція
+                            </a>
+
+                            <button class="exo-mobile-toggle exo-mobile-toggle-arrow" type="button"
+                                aria-expanded="false" data-mobile-menu-target="mobile-submenu-4"
+                                aria-label="Відкрити підменю Індустрія та комерція">
+                                <span class="exo-nav-caret"></span>
+                            </button>
+                        </div>
+
+                        <div class="exo-dropdown-panel">
+                            <div class="exo-dropdown-inner">
+                                <div class="exo-dropdown-label">Індустрія та комерція</div>
+                                <ul class="exo-dropdown-list">
+                                    <li><a href="/heat-recovery/industry-and-commercial/bakery-industry/">Пекарська промисловість</a></li>
+                                    <li><a href="/heat-recovery/industry-commercial/brewing-industry/">Пивоварна промисловість</a></li>
+                                    <li><a href="/heat-recovery/industry-commercial/food-processing/">Харчова промисловість</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exo-mobile-submenu" id="mobile-submenu-4">
+                            <ul class="exo-mobile-submenu-list">
+                                <li><a href="/heat-recovery/industry-and-commercial/bakery-industry/">Пекарська промисловість</a></li>
+                                <li><a href="/heat-recovery/industry-commercial/brewing-industry/">Пивоварна промисловість</a></li>
+                                <li><a href="/heat-recovery/industry-commercial/food-processing/">Харчова промисловість</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if '/contact' in page.url %}active{% endif %}"
-                            href="/contact/">Контакти</a>
+
+                    <!-- Продукція -->
+                    <li class="nav-item nav-item-dropdown">
+                        <a class="nav-link exo-desktop-link {% if '/products' in page.url %}active{% endif %}"
+                            href="/products/">
+                            Продукція <span class="exo-nav-caret"></span>
+                        </a>
+
+                        <div class="exo-mobile-row d-lg-none">
+                            <a class="nav-link exo-mobile-link {% if '/products' in page.url %}active{% endif %}"
+                                href="/products/">
+                                Продукція
+                            </a>
+
+                            <button class="exo-mobile-toggle exo-mobile-toggle-arrow" type="button"
+                                aria-expanded="false" data-mobile-menu-target="mobile-submenu-5"
+                                aria-label="Відкрити підменю Продукція">
+                                <span class="exo-nav-caret"></span>
+                            </button>
+                        </div>
+
+                        <div class="exo-dropdown-panel">
+                            <div class="exo-dropdown-inner">
+                                <div class="exo-dropdown-label">Продукція</div>
+                                <ul class="exo-dropdown-list">
+                                    <li><a href="/chimney-fans/">Димососи</a></li>
+                                    <li><a href="/controls/">Керування</a></li>
+                                    <li><a href="/particle-filters/">Електростатичні фільтри</a></li>
+                                    <li><a href="/heat-recovery/">Рекуперація тепла</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="exo-mobile-submenu" id="mobile-submenu-5">
+                            <ul class="exo-mobile-submenu-list">
+                                <li><a href="/chimney-fans/">Димососи</a></li>
+                                <li><a href="/controls/">Керування</a></li>
+                                <li><a href="/particle-filters/">Електростатичні фільтри</a></li>
+                                <li><a href="/heat-recovery/">Рекуперація тепла</a></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
 
-                <!-- CTA (desktop right) -->
-                <div class="d-none d-lg-flex position-absolute end-0 top-50 translate-middle-y header-cta">
-                    <a class="btn exo-cta " href="/contact/">
-                        Отримати консультацію
-                    </a>
-                </div>
 
-                <!-- CTA (mobile inside меню) -->
-                <div class="d-lg-none pt-2">
-                    <a class="btn exo-cta w-100 justify-content-center" href="/contact/">
-                        Отримати консультацію
-                    </a>
-                </div>
 
+                <!-- Mobile extra links -->
+                <div class="d-lg-none pt-2 exo-mobile-extra">
+                    <a class="nav-link {% if '/about' in page.url %}active{% endif %}" href="/about-us/">Про нас</a>
+                    <a class="nav-link {% if '/contact' in page.url %}active{% endif %}" href="/contact/">Контакти</a>
+                    <a class="nav-link" href="/files/datasheets/price-list/Exodraft_price_05.01.2026-3.pdf"
+                        target="_blank" rel="noopener">Прайс лист</a>
+                </div>
             </div>
         </div>
     </nav>

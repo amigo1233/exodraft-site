@@ -1,0 +1,16 @@
+/* Немного "воздуха" между секциями на больших экранах */
+@media (min-width: 992px) {
+        .py-lg-6 {
+                padding-top: 4.5rem !important;
+                padding-bottom: 4.5rem !important;
+        }
+}
+
+.section-kicker {
+        font-weight: 600;
+        /* чуть жирнее (между normal и bold) */
+        letter-spacing: 0.12em;
+        /* расстояние между буквами */
+        text-transform: uppercase;
+        /* на всякий случай, если где-то забудешь класс */
+}

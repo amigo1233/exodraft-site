@@ -91,9 +91,9 @@ accordion:
         href: "/files/datasheets/controls/xzense/xzense-datasheet-EN.pdf"
       - kind: "PDF"
         label: "Інструкція"
-        filename: "Manual_Xzense_UK.pdf"
+        filename: "Manual-Xzense-RU.pdf"
         size: "2 MB"
-        href: "/files/datasheets/controls/xzense/Manual_Xzense_UK.pdf"
+        href: "/files/datasheets/controls/xzense/Manual-Xzense-RU.pdf"
 
   quickVideos:
     title: "Швидкі відеоінструкції"

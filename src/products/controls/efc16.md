@@ -71,7 +71,7 @@ accordion:
     title: "Завантаження"
     items:
       - kind: "PDF"
-        label: "Інструкція RU"
+        label: "Інструкція"
         filename: "3110063-EFC16-RU.pdf"
         size: "679 KB"
         href: "/files/datasheets/controls/efc16/3110063-EFC16-RU.pdf"
@@ -80,9 +80,4 @@ accordion:
         filename: "DS_EFC16EFC35S_UK.pdf"
         size: "896 KB"
         href: "/files/datasheets/controls/efc16/DS_EFC16EFC35S_UK.pdf"
-      - kind: "PDF"
-        label: "Інструкція"
-        filename: "Manual_EFC16_UK.pdf"
-        size: "170 KB"
-        href: "/files/datasheets/controls/efc16/Manual_EFC16_UK.pdf"
 ---

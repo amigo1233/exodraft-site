@@ -109,7 +109,7 @@ accordion:
         href: "/files/datasheets/chimney-fans/rsv/Datasheet_RSV_UK.pdf"
       - kind: "PDF"
         label: "Інструкція"
-        filename: "Manual_RSV_UK.pdf"
+        filename: Manual_RSV_RU.pdf
         size: "1 MB"
-        href: "/files/datasheets/chimney-fans/rsv/Manual_RSV_UK.pdf"
+        href: "/files/datasheets/chimney-fans/rsv/Manual_RSV_RU.pdf"
 ---

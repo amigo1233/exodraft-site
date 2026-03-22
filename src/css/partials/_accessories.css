@@ -1,0 +1,166 @@
+/* =========================
+   Accessories / Feature sections (alternating like original)
+========================= */
+
+.acc-page {
+        background: #fff;
+}
+
+.acc-hero-img {
+        width: 100%;
+        max-width: 520px;
+        height: auto;
+        display: block;
+        margin-inline: auto;
+}
+
+.acc-section {
+        padding: 3.5rem 0;
+}
+
+@media (min-width: 992px) {
+        .acc-section {
+                padding: 4.5rem 0;
+        }
+}
+
+.acc-card {
+        background: #f6f7f9;
+        /* сірий фон як в оригіналі */
+        border-radius: 18px;
+        padding: 22px 22px;
+        border: 1px solid rgba(15, 23, 42, .08);
+}
+
+@media (min-width: 992px) {
+        .acc-card {
+                padding: 28px 28px;
+        }
+}
+
+/* Заголовок секції */
+.acc-title {
+        font-size: clamp(1.6rem, 2.1vw, 2.2rem);
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+        font-weight: 700;
+        margin: 0 0 14px;
+        color: #0b2b3a;
+}
+
+/* Текст секції */
+.acc-text {
+        font-size: 0.98rem;
+        line-height: 1.75;
+        color: rgba(18, 25, 38, .78);
+        margin: 0;
+}
+
+.acc-text p {
+        margin: 0 0 12px;
+}
+
+.acc-text p:last-child {
+        margin-bottom: 0;
+}
+
+/* Медіа */
+.acc-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.acc-media img {
+        width: 100%;
+        height: auto;
+        max-width: 860px;
+        /* щоб не було “гігантським” */
+        max-height: 520px;
+        /* обмежуємо висоту */
+        object-fit: contain;
+        /* НЕ ріже */
+        display: block;
+}
+
+/* Чергування: на desktop можна робити reverse */
+@media (min-width: 992px) {
+        .acc-row--reverse {
+                flex-direction: row-reverse;
+        }
+}
+
+/* Мобайл: картинка над текстом, щоб читабельно */
+@media (max-width: 991.98px) {
+        .acc-card {
+                margin-top: 14px;
+        }
+
+        .acc-media img {
+                max-height: 360px;
+        }
+}
+
+/* Відступи секцій */
+.acc-hero {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        /* відстань до наступного блоку */
+}
+
+.acc-split {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+}
+
+/* Якщо хочеш ще більше проміжку саме між секціями */
+.acc-split+.acc-split {
+        padding-top: 4rem;
+}
+
+/* Accessories hero: mobile spacing */
+@media (max-width: 991.98px) {
+        .acc-hero__content {
+                margin-top: 44px;
+                /* зсуває блок вниз */
+        }
+
+        .acc-hero__content .ic-kicker {
+                margin-bottom: 10px !important;
+        }
+
+        .acc-hero__content h1 {
+                margin-bottom: 20px !important;
+        }
+
+        .acc-hero__content .d-flex {
+                margin-top: 18px !important;
+                /* більше відступу перед кнопками */
+                gap: 12px !important;
+                /* більше відстані між кнопками, якщо їх 2 */
+        }
+}
+
+/* HERO image: зробити менше на мобайлі */
+@media (max-width: 991.98px) {
+
+        /* контейнер hero-картинки */
+        .acc-hero__media {
+                max-width: 360px;
+                /* ширина блоку */
+                margin-inline: auto;
+                /* центр */
+        }
+
+        /* сама картинка */
+        .acc-hero__img {
+                width: 100%;
+                height: auto;
+                max-height: 360px;
+                /* ⬅️ головне: робить нижче */
+                object-fit: contain;
+                /* щоб не обрізало */
+                display: block;
+                margin-inline: auto;
+        }
+}
