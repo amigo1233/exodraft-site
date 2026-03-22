@@ -304,7 +304,7 @@ document.addEventListener('click', (e) => {
         successEl.hidden = false;
     }
 
-    function resetModal() {о
+    function resetModal() {
         if (contentEl) contentEl.hidden = false;
         if (successEl) successEl.hidden = true;
         if (msg) msg.textContent = "";
@@ -322,6 +322,7 @@ document.addEventListener('click', (e) => {
         const fd = new FormData(form);
         const name = String(fd.get('name') || '').trim();
         const phone = normalizePhone(fd.get('phone'));
+        const message = String(fd.get('message') || '').trim();
         const website = String(fd.get('website') || '').trim();
 
         if (name.length < 2) return setMsg("Вкажіть ім’я (мінімум 2 символи).", false);
@@ -330,10 +331,10 @@ document.addEventListener('click', (e) => {
         try {
             setMsg("Надсилаємо...", true);
 
-            const res = await fetch("/api/call-request", {
+            const res = await fetch("http://localhost:3001/api/call-request", { // http://localhost:8080
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, phone, page: location.href, website })
+                body: JSON.stringify({ name, phone, message, page: location.href, website })
             });
 
             if (!res.ok) {
@@ -357,3 +358,209 @@ document.addEventListener('click', (e) => {
         }
     });
 })();
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMq = window.matchMedia('(max-width: 991.98px)');
+    const header = document.querySelector('.site-header');
+    const headerToggle = document.querySelector('[data-mobile-header-toggle]');
+    const headerPanel = document.getElementById('mainNavbar');
+    const submenuToggles = document.querySelectorAll('.exo-mobile-toggle');
+
+    if (!header || !headerToggle || !headerPanel) return;
+
+    function getSubmenu(btn) {
+        const id = btn.getAttribute('data-mobile-menu-target');
+        return id ? document.getElementById(id) : null;
+    }
+
+    function animateCloseSubmenu(btn, panel) {
+        if (!panel) return;
+        btn.setAttribute('aria-expanded', 'false');
+
+        panel.style.height = panel.scrollHeight + 'px';
+
+        requestAnimationFrame(() => {
+            panel.classList.remove('is-open');
+            panel.style.height = '0px';
+        });
+    }
+
+    function closeAllSubmenus(exceptBtn = null) {
+        submenuToggles.forEach((btn) => {
+            if (btn === exceptBtn) return;
+            const panel = getSubmenu(btn);
+            if (!panel) return;
+
+            if (btn.getAttribute('aria-expanded') === 'true') {
+                animateCloseSubmenu(btn, panel);
+            } else {
+                btn.setAttribute('aria-expanded', 'false');
+                panel.classList.remove('is-open');
+                panel.style.height = '0px';
+            }
+        });
+    }
+
+    function openHeader() {
+        header.classList.add('is-menu-open');
+        headerToggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('menu-open-mobile');
+    }
+
+    function closeHeader() {
+        header.classList.remove('is-menu-open');
+        headerToggle.setAttribute('aria-expanded', 'false');
+        closeAllSubmenus();
+        document.body.classList.remove('menu-open-mobile');
+    }
+
+    submenuToggles.forEach((btn) => {
+        const panel = getSubmenu(btn);
+        if (panel) panel.style.height = '0px';
+
+        btn.addEventListener('click', () => {
+            if (!mobileMq.matches) return;
+            if (!header.classList.contains('is-menu-open')) return;
+
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+            if (isOpen) {
+                animateCloseSubmenu(btn, panel);
+                return;
+            }
+
+            closeAllSubmenus(btn);
+
+            btn.setAttribute('aria-expanded', 'true');
+
+            if (panel) {
+                panel.classList.add('is-open');
+                panel.style.height = '0px';
+
+                requestAnimationFrame(() => {
+                    panel.style.height = panel.scrollHeight + 'px';
+                });
+
+                const onEnd = (e) => {
+                    if (e.propertyName !== 'height') return;
+                    if (btn.getAttribute('aria-expanded') === 'true') {
+                        panel.style.height = 'auto';
+                    }
+                    panel.removeEventListener('transitionend', onEnd);
+                };
+
+                panel.addEventListener('transitionend', onEnd);
+            }
+        });
+    });
+
+    headerToggle.addEventListener('click', () => {
+        if (!mobileMq.matches) return;
+
+        if (header.classList.contains('is-menu-open')) {
+            closeHeader();
+        } else {
+            openHeader();
+        }
+    });
+
+    headerPanel.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href]');
+        if (!link || !mobileMq.matches) return;
+        closeHeader();
+    });
+
+    function resetMobileState() {
+        if (!mobileMq.matches) {
+            header.classList.remove('is-menu-open');
+            headerToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open-mobile');
+
+            submenuToggles.forEach((btn) => {
+                const panel = getSubmenu(btn);
+                btn.setAttribute('aria-expanded', 'false');
+                if (panel) {
+                    panel.classList.remove('is-open');
+                    panel.style.height = '';
+                }
+            });
+        }
+    }
+
+    resetMobileState();
+
+    if (mobileMq.addEventListener) {
+        mobileMq.addEventListener('change', resetMobileState);
+    } else if (mobileMq.addListener) {
+        mobileMq.addListener(resetMobileState);
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const videoCards = document.querySelectorAll('.js-hr-video');
+
+    videoCards.forEach((card) => {
+        const video = card.querySelector('video');
+        const playBtn = card.querySelector('.hr-video-card__play');
+
+        if (!video || !playBtn) return;
+
+        video.removeAttribute('controls');
+
+        playBtn.addEventListener('click', async () => {
+            try {
+                video.setAttribute('controls', 'controls');
+                await video.play();
+                card.classList.add('is-playing');
+            } catch (err) {
+                console.error('Video play failed:', err);
+            }
+        });
+
+        video.addEventListener('pause', () => {
+            if (video.currentTime > 0 && !video.ended) return;
+            card.classList.remove('is-playing');
+            video.removeAttribute('controls');
+        });
+
+        video.addEventListener('ended', () => {
+            card.classList.remove('is-playing');
+            video.removeAttribute('controls');
+            video.currentTime = 0;
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    const desktopMq = window.matchMedia('(min-width: 992px)');
+    const alwaysSolid = header.classList.contains('header--solid');
+
+    function updateHeaderState() {
+        if (alwaysSolid) {
+            header.classList.remove('header--transparent', 'header--hovered');
+            header.classList.add('header--solid');
+            return;
+        }
+
+        const isTop = window.scrollY <= 10;
+        const isHovered = header.matches(':hover');
+
+        header.classList.toggle('header--hovered', isHovered && desktopMq.matches);
+        header.classList.toggle('header--solid', !isTop || (isHovered && desktopMq.matches));
+        header.classList.toggle('header--transparent', isTop && !(isHovered && desktopMq.matches));
+    }
+
+    updateHeaderState();
+
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    window.addEventListener('resize', updateHeaderState);
+
+    header.addEventListener('mouseenter', updateHeaderState);
+    header.addEventListener('mouseleave', updateHeaderState);
+});

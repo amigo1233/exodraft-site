@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: Контакти — Exodraft
+headerOffset: true
+solidHeader: true
 ---
 
 <section class="py-5 bg-light">
@@ -43,8 +45,8 @@ title: Контакти — Exodraft
                     </div>
 
                     <div class="mt-4 d-flex flex-column gap-3 contact-actions">
-                        <button type="button" class="btn exo-btn-pill exo-btn-pill--primary exo-btn-call" data-bs-toggle="modal"
-                            data-bs-target="#callModal">
+                        <button type="button" class="btn exo-btn-pill exo-btn-pill--primary exo-btn-call"
+                            data-bs-toggle="modal" data-bs-target="#callModal">
                             Замовити дзвінок
                             <img src="/img/logo/telephone.png" alt="" class="btn-icon">
                         </button>
@@ -103,6 +105,13 @@ title: Контакти — Exodraft
                             <label class="form-label">Номер телефону</label>
                             <input class="form-control" name="phone" autocomplete="tel" required inputmode="tel"
                                 placeholder="+380..." maxlength="30">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Повідомлення <span
+                                    class="text-muted">(необов’язково)</span></label>
+                            <textarea class="form-control" name="message" rows="4" maxlength="500"
+                                placeholder="Напишіть ваш коментар або запитання"></textarea>
                         </div>
 
                         <div id="callFormMsg" class="small mb-2"></div>

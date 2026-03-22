@@ -1,0 +1,121 @@
+.ic-image-card--DSC_3448 {
+    height: 600px;
+}
+
+@media (max-width: 575.98px) {
+    .ic-image-card--DSC_3448 {
+        height: 300px;
+    }
+
+
+}
+
+.hr-video-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #000;
+    aspect-ratio: 16 / 9;
+}
+
+.hr-video-card__media {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hr-video-card__play {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 110px;
+    height: 110px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.hr-video-card__play-circle {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 76px;
+    height: 76px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.hr-video-card__play:hover .hr-video-card__play-circle {
+    transform: scale(1.05);
+    background: #fff;
+}
+
+.hr-video-card__play-triangle {
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 17px solid #0d6efd;
+}
+
+.hr-video-card__play-ripple {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 76px;
+    height: 76px;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    animation: hrVideoPulse 2s ease-out infinite;
+}
+
+@keyframes hrVideoPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    70% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+.hr-video-card.is-playing .hr-video-card__play {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+}
+
+@media (max-width: 575.98px) {
+    .hr-video-card__play {
+        width: 88px;
+        height: 88px;
+    }
+
+    .hr-video-card__play-circle,
+    .hr-video-card__play-ripple {
+        width: 62px;
+        height: 62px;
+    }
+
+    .hr-video-card__play-triangle {
+        border-top-width: 9px;
+        border-bottom-width: 9px;
+        border-left-width: 14px;
+    }
+}

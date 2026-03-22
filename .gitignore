@@ -17,3 +17,9 @@ _cache/
 Thumbs.db
 .vscode/
 .idea/
+
+node_modules/
+dist/
+.netlify/
+.env
+.env.*

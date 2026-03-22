@@ -37,7 +37,7 @@
   <link rel="icon" type="image/png" href="/img/exo.png">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 {% if headerOffset %}has-header-offset{% endif %}">
   <div class="header-topline" aria-hidden="true"></div>
   {# Header общий для всех страниц #}
   {% include "header.njk" %}

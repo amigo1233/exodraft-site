@@ -1,0 +1,130 @@
+/* ===== Exodraft pill button ===== */
+.exo-btn-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 1px solid var(--exo-btn-border, rgba(255, 255, 255, .55));
+        background: var(--exo-btn-bg, rgba(255, 255, 255, .08));
+        color: var(--exo-btn-text, #fff);
+        font-weight: 600;
+        line-height: 1;
+        text-decoration: none;
+        transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+        height: 48px;
+}
+
+.exo-btn-pill:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(13, 110, 253, .12);
+        background: #dfeaff;
+        color: var(--exo-btn-text);
+}
+
+.exo-btn-pill:active {
+        transform: translateY(0);
+        box-shadow: none;
+}
+
+.exo-btn-pill__arrow {
+        font-size: 1.05em;
+}
+
+.exo-btn-pill__arrow {
+        display: inline-block;
+        transition: transform .18s ease;
+}
+
+.exo-btn-pill:hover .exo-btn-pill__arrow {
+        transform: translateX(3px);
+}
+
+.exo-btn-pill--primary {
+        --exo-btn-bg: #0d6efd;
+        --exo-btn-border: #0d6efd;
+        --exo-btn-text: #ffffff;
+}
+
+.exo-btn-pill--primary:hover {
+        background: #0b5ed7;
+        /* темнее на hover */
+        border-color: #0b5ed7;
+        color: #ffffff;
+}
+
+.exo-btn-pill--light {
+        --exo-btn-bg: #e9f1ff;
+        --exo-btn-border: rgba(13, 110, 253, .25);
+        --exo-btn-text: #0d6efd;
+}
+
+.exo-btn-pill--outline {
+        --exo-btn-bg: rgba(255, 255, 255, .08);
+        --exo-btn-border: rgba(255, 255, 255, .55);
+        --exo-btn-text: #ffffff;
+        backdrop-filter: blur(6px);
+}
+
+.exo-btn-pill--outline:hover {
+        background: rgba(255, 255, 255, .14);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+        color: #fff;
+}
+
+.exo-btn-pill--glass {
+        --exo-btn-bg: rgba(255, 255, 255, .10);
+        --exo-btn-border: rgba(255, 255, 255, .55);
+        --exo-btn-text: #fff;
+
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+}
+
+.exo-btn-pill--glass::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        left: -30%;
+        width: 60%;
+        height: 180%;
+        transform: rotate(18deg);
+        background: linear-gradient(to right,
+                        transparent,
+                        rgba(255, 255, 255, .35),
+                        transparent);
+        opacity: 0;
+        transition: opacity .18s ease, transform .28s ease;
+        pointer-events: none;
+}
+
+.exo-btn-pill--glass:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, .18);
+        border-color: rgba(255, 255, 255, .85);
+        box-shadow:
+                0 14px 30px rgba(0, 0, 0, .22),
+                inset 0 0 0 1px rgba(255, 255, 255, .20);
+        color: #fff;
+}
+
+.exo-btn-pill--glass:hover::before {
+        opacity: 1;
+        transform: translateX(120%) rotate(18deg);
+}
+
+.exo-btn-pill--glass:active {
+        transform: translateY(0);
+        box-shadow:
+                0 8px 18px rgba(0, 0, 0, .18),
+                inset 0 0 0 1px rgba(255, 255, 255, .15);
+}
+
+/* маленький размер pill-кнопки */
+.exo-btn-pill--sm {
+        padding: 10px 14px;
+        font-size: 14px;
+        gap: 8px;
+}

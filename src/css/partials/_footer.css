@@ -1,0 +1,62 @@
+/* FOOTER */
+
+footer {
+        font-size: 0.85rem;
+}
+
+.site-footer {
+        background-color: #f9fafb;
+        color: #0f172a;
+        border-top: 1px solid #e5e7eb;
+        font-size: 0.95rem;
+
+}
+
+.site-footer a {
+        color: #0f172a;
+        text-decoration: none;
+}
+
+.site-footer a:hover {
+        color: #0d6efd;
+        text-decoration: underline;
+}
+
+.footer-logo img {
+        height: 32px;
+        width: auto;
+}
+
+.footer-heading {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: #0b2035;
+        /* чуть темнее, как на оригинале */
+}
+
+.footer-links li+li {
+        margin-top: 0.3rem;
+}
+
+.footer-text p {
+        color: #4b5563;
+}
+
+/* Нижняя полоска */
+.site-footer__bottom {
+        border-top: 1px solid #e5e7eb;
+        padding: 0.75rem 0;
+        background-color: #f3f4f6;
+}
+
+.site-footer__bottom span {
+        color: #6b7280;
+}
+
+/* На маленьких экранах чуть сжимаем отступы */
+@media (max-width: 575.98px) {
+        .site-footer .container {
+                padding-inline: 1rem;
+        }
+}

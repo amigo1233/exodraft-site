@@ -72,7 +72,7 @@ accordion:
     title: "Завантаження"
     items:
       - kind: "PDF"
-        label: "Інструкція RU"
+        label: "Інструкція"
         filename: "Manual_EFC18_RU.pdf"
         size: "1,023 KB"
         href: "/files/datasheets/controls/efc18/3002218-EFC18-RU.pdf"
@@ -82,10 +82,4 @@ accordion:
         filename: "Datasheet_EFC18_UK.pdf"
         size: "296 KB"
         href: "/files/datasheets/controls/efc18/Datasheet_EFC18_UK.pdf"
-
-      - kind: "PDF"
-        label: "Інструкція"
-        filename: "Manual_EFC18_UK.pdf"
-        size: "566 KB"
-        href: "/files/datasheets/controls/efc18/Manual_EFC18_UK.pdf"
 ---

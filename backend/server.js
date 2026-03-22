@@ -58,6 +58,7 @@ app.use((req, res, next) => {
 app.post("/api/call-request", async (req, res) => {
     const name = clean(req.body?.name, 80);
     const phone = clean(req.body?.phone, 30);
+    const message = clean(req.body?.message, 500);
     const page = clean(req.body?.page, 300);
     const website = clean(req.body?.website, 120);
 
@@ -73,6 +74,7 @@ app.post("/api/call-request", async (req, res) => {
         `📞 Нова заявка на дзвінок
 👤 Ім’я: ${name}
 ☎️ Телефон: ${phone}
+💬 Повідомлення: ${message || "—"}
 🌐 Сторінка: ${page}
 ⏱ Час: ${new Date().toLocaleString("uk-UA")}`;
 

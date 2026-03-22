@@ -1,0 +1,81 @@
+/* КОНТАКТНЫЙ БАННЕР */
+
+.contact-cta {
+        min-height: 70vh;
+        color: #fff;
+        display: flex;
+        align-items: center;
+}
+
+.contact-cta-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+        /* картинка зміщується вгору */
+        z-index: 0;
+}
+
+.contact-cta-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1;
+}
+
+.contact-cta-content {
+        padding-top: 40px;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 25px;
+}
+
+.contact-cta-btn {
+        padding-inline: 2.5rem;
+        /* чуть пошире */
+        font-weight: 500;
+}
+
+/* Титул и текст в контактном баннере */
+
+.contact-cta-title {
+        font-size: 50px;
+        /* адаптивный крупный заголовок */
+        line-height: 1.25;
+        padding-bottom: 10px;
+}
+
+.contact-cta-text {
+        letter-spacing: 3px;
+        font-weight: 600;
+        padding-bottom: 10px;
+}
+
+/* На больших экранах делаем ещё чуть крупнее */
+@media (min-width: 992px) {
+        .contact-cta-text {
+                font-size: 1.1rem;
+        }
+}
+
+@media (max-width: 575.98px) {
+        .contact-cta {
+                min-height: 550px;
+                /* <-- тут міняєш висоту на телефоні */
+        }
+
+        .contact-cta-title {
+                font-size: 35px;
+                line-height: 50px;
+        }
+
+        /* щоб секція не була занадто “пухла” по падінгах на мобілці */
+        .contact-cta.py-5 {
+                padding-top: 24px !important;
+                padding-bottom: 24px !important;
+        }
+}

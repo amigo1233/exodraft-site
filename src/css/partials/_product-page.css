@@ -1,0 +1,319 @@
+/* ==============
+   PRODUCT PAGE
+   ============== */
+
+/* ---------- Product hero typography (right column) ---------- */
+.product-title-lg {
+        font-size: clamp(1.75rem, 2.2vw, 2.35rem);
+        /* smaller like original */
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+}
+
+.product-lead {
+        font-size: .90rem;
+        line-height: 1.65;
+        max-width: 52ch;
+        color: rgba(0, 0, 0, 0.82);
+}
+
+.product-lead p {
+        margin: 0 0 12px;
+}
+
+.product-lead p:last-child {
+        margin-bottom: 0;
+}
+
+/* optional: small “kicker” spacing if you use .ic-kicker above title */
+.product-page .ic-kicker {
+        letter-spacing: .14em;
+}
+
+/* ---------- Gallery: thumbs left + two big images (desktop) ---------- */
+.product-gallery--dual {
+        display: grid;
+        grid-template-columns: 76px 1fr;
+        gap: 18px;
+        align-items: start;
+        max-width: 100%;
+}
+
+.product-gallery--dual .product-gallery__thumbs {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+}
+
+.product-gallery--dual .product-gallery__thumb {
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 14px;
+        background: #fff;
+        padding: 10px;
+        cursor: pointer;
+        transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+}
+
+.product-gallery--dual .product-gallery__thumb:hover {
+        transform: translateY(-1px);
+}
+
+.product-gallery--dual .product-gallery__thumb.is-active {
+        border-color: rgba(13, 110, 253, .60);
+        box-shadow: 0 0 0 3px rgba(13, 110, 253, .14);
+}
+
+.product-gallery--dual .product-gallery__thumb img {
+        width: 100%;
+        height: auto;
+        display: block;
+}
+
+/* stage with 2 big cards */
+.product-gallery--dual .product-gallery__stage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        max-width: 100%;
+}
+
+.product-gallery--dual .product-gallery__big {
+        border-radius: 18px;
+        background: #f6f7f8;
+        padding: 10px;
+        /* smaller padding => bigger image */
+        min-height: 520px;
+        /* NOT too tall */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        opacity: .94;
+        transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+
+.product-gallery--dual .product-gallery__big img {
+        max-width: 100%;
+        max-height: 520px;
+        width: auto;
+        height: auto;
+        display: block;
+}
+
+.product-gallery--dual .product-gallery__big.is-active {
+        opacity: 1;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+        transform: translateY(-2px);
+}
+
+/* ---------- Mobile: one big + thumbs under (small thumbs) ---------- */
+@media (max-width: 991.98px) {
+        .product-gallery--dual {
+                grid-template-columns: 1fr;
+                gap: 12px;
+        }
+
+        .product-gallery--dual .product-gallery__stage {
+                grid-template-columns: 1fr;
+                gap: 12px;
+        }
+
+        /* show only active big image */
+        .product-gallery--dual .product-gallery__big {
+                display: none;
+                min-height: 420px;
+                padding: 12px;
+        }
+
+        .product-gallery--dual .product-gallery__big.is-active {
+                display: flex;
+        }
+
+        .product-gallery--dual .product-gallery__big img {
+                max-height: 380px;
+        }
+
+        /* thumbs below & scrollable */
+        .product-gallery--dual .product-gallery__thumbs {
+                order: 2;
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 10px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 6px;
+        }
+
+        .product-gallery--dual .product-gallery__thumb {
+                flex: 0 0 64px;
+                /* fixed thumb size */
+                padding: 6px;
+                border-radius: 12px;
+        }
+
+        .product-lead {
+                max-width: none;
+        }
+}
+
+/* ---------- Desktop: a bit more space between gallery and text ---------- */
+/* (you already have ps-lg-4; this just ensures “more right” feel) */
+@media (min-width: 992px) {
+        .product-page .ps-lg-4 {
+                padding-left: 32px !important;
+        }
+}
+
+/* ==========================================================
+   "THE SYSTEM" BLOCK (like original)
+   ========================================================== */
+.ic-title--xl {
+        font-size: clamp(1.6rem, 2.4vw, 2.35rem);
+        /* smaller than before */
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+}
+
+.product-system {
+        margin-top: 10px;
+}
+
+.product-system__item+.product-system__item {
+        margin-top: 22px;
+}
+
+.product-system__title {
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.25;
+        margin: 0 0 8px;
+        color: #0b2b3a;
+}
+
+.product-system__text {
+        margin: 0;
+        color: rgba(18, 25, 38, .78);
+        font-size: .98rem;
+        line-height: 1.7;
+        max-width: 62ch;
+}
+
+/* plain image (no card) */
+.product-system-media--plain {
+        background: transparent;
+        border-radius: 0;
+        padding: 0;
+        min-height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        /* don't crop */
+}
+
+.product-system-media--plain .product-system-media__img {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-width: 900px;
+        /* default */
+}
+
+/* reduce on mobile */
+@media (max-width: 991.98px) {
+        .product-system-media--plain .product-system-media__img {
+                max-width: 520px;
+        }
+}
+
+/* ==========================================================
+   VIDEO STAGE (autoplay loop styles friendly)
+   ========================================================== */
+.product-media-stage {
+        position: relative;
+        border-radius: 16px;
+        /* small radius like your site */
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
+}
+
+.product-media-stage__video video,
+.product-media-stage__video iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+}
+
+/* hint card */
+.product-media-stage__hint {
+        position: absolute;
+        left: 24px;
+        top: 24px;
+        max-width: 360px;
+}
+
+.product-media-hint {
+        background: rgba(255, 255, 255, .92);
+        border: 1px solid rgba(0, 0, 0, .10);
+        border-radius: 16px;
+        padding: 16px 18px;
+}
+
+@media (max-width: 991.98px) {
+        .product-media-stage {
+                border-radius: 14px;
+        }
+
+        .product-media-stage__hint {
+                left: 14px;
+                top: 14px;
+                max-width: 85%;
+        }
+
+        .product-media-hint {
+                padding: 12px 14px;
+                border-radius: 14px;
+        }
+}
+
+/* ===== Gallery: single image mode (no thumbs, centered) ===== */
+.product-gallery--single {
+        grid-template-columns: 1fr;
+        /* убрали колонку под миниатюры */
+}
+
+.product-gallery--single .product-gallery__stage {
+        grid-template-columns: 1fr;
+        /* одна большая */
+        justify-items: center;
+        /* по центру */
+}
+
+.product-gallery--single .product-gallery__big {
+        width: min(450px, 100%);
+        /* “поменьше”, как ты хочешь */
+        min-height: 520px;
+        /* подгони если нужно */
+}
+
+.product-gallery--single .product-gallery__big img {
+        max-height: 520px;
+        /* чтобы не раздувалось */
+}
+
+@media (max-width: 991.98px) {
+        .product-gallery--single .product-gallery__big {
+                min-height: 420px;
+                width: min(420px, 100%);
+        }
+
+        .product-gallery--single .product-gallery__big img {
+                max-height: 380px;
+        }
+}
+
+.product-page img {
+        image-rendering: auto;
+}
