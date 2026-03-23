@@ -429,10 +429,15 @@
 
 /* ===== MOBILE FULLSCREEN HEADER OVERRIDE ===== */
 @media (max-width: 991.98px) {
+        
         .site-header {
-                position: sticky;
+                position: fixed;
                 top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
                 z-index: 5000;
+                background: transparent !important;
         }
 
         .site-header .navbar {
@@ -812,5 +817,37 @@
 
         .site-header.is-menu-open .exo-burger > span {
                 background: #0b2b3a !important;
+        }
+}
+
+@media (max-width: 991.98px) {
+        /* закрытый мобильный header поверх hero */
+        .site-header.header--transparent:not(.is-menu-open) .exo-navbar {
+                background: transparent !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+        }
+
+        .site-header.header--transparent:not(.is-menu-open) .exo-navbar::after {
+                background: rgba(255, 255, 255, 0.20);
+        }
+
+        .site-header.header--transparent:not(.is-menu-open) .exo-burger > span {
+                background: #ffffff !important;
+        }
+
+        .site-header.header--transparent:not(.is-menu-open) .exo-logo {
+                filter: brightness(0) invert(1) !important;
+        }
+
+        /* открытое меню */
+        .site-header.is-menu-open .exo-navbar {
+                background: #ffffff !important;
+                box-shadow: none !important;
+        }
+
+        .site-header.is-menu-open .exo-navbar::after {
+                background: rgba(15, 23, 42, 0.10) !important;
         }
 }
