@@ -149,7 +149,7 @@
 /* Dropdown panel */
 .exo-dropdown-panel {
         position: absolute;
-        top: 100%;
+        top: calc(100% + 1px);
         left: 0;
         padding-top: 14px;
         min-width: 320px;
@@ -752,11 +752,11 @@
         border-bottom: 0 !important;
 }
 
-.site-header {
-        position: fixed;
+.exo-navbar {
+        position: relative;
 }
 
-.site-header::after {
+.exo-navbar::after {
         content: "";
         position: absolute;
         left: 0;
@@ -765,18 +765,28 @@
         height: 1px;
         background: transparent;
         pointer-events: none;
+        z-index: 1;
         transition: background-color .25s ease, opacity .25s ease;
 }
 
 /* светлая линия, когда header прозрачный */
-.site-header.header--transparent::after {
+.site-header.header--transparent .exo-navbar::after {
         background: rgba(255, 255, 255, 0.20);
 }
 
 /* тёмная линия, когда header белый */
-.site-header.header--solid::after,
-.site-header.header--hovered::after {
+.site-header.header--solid .exo-navbar::after,
+.site-header.header--hovered .exo-navbar::after {
         background: rgba(15, 23, 42, 0.10);
+}
+
+.exo-navbar > .container {
+        position: relative;
+        z-index: 2;
+}
+
+.exo-dropdown-panel {
+        z-index: 3005;
 }
 
 

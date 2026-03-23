@@ -331,7 +331,7 @@ document.addEventListener('click', (e) => {
         try {
             setMsg("Надсилаємо...", true);
 
-            const res = await fetch("http://localhost:3001/api/call-request", { // http://localhost:8080
+            const res = await fetch("/api/call-request", { // http://localhost:8080
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, phone, message, page: location.href, website })
