@@ -179,7 +179,7 @@ accordion:
         size: "3 MB"
         href: "/files/datasheets/particle-filters/3112043_ESP-10_UK.pdf"
       - kind: "PDF"
-        label: "Data sheets"
+        label: "Технічний лист"
         filename: "DS_ESP10_UK.pdf"
         size: "291 KB"
         href: "/files/datasheets/particle-filters/DS_ESP10_UK.pdf"

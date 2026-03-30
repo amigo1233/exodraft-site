@@ -54,7 +54,7 @@ stats:
 
 system:
   kicker: "СИСТЕМА"
-  title: "Вбудоване рішення фільтра, готове до встановлення plug and play"
+  title: "Вбудоване фільтраційне рішення, готове до встановлення за принципом plug and play"
   image:
     src: "/img/products/Particle-filters/ESP-25-model.110.jpg"
     alt: "Система ESP-25"
