@@ -5,9 +5,9 @@
     <div class="contact-cta-overlay"></div>
 
     <div class="container position-relative contact-cta-content">
-        <div class="row g-4">
-            <!-- ОДНА колонка с текстом и кнопкой -->
-            <div class="col-lg-8 col-xl-7 text-start">
+        <div class="row g-4 align-items-center">
+            <!-- Текст слева -->
+            <div class="col-lg-7 col-xl-6 text-start">
                 <p class="text-uppercase small text-white mb-2 contact-cta-text">
                     exodraft
                 </p>
@@ -16,16 +16,66 @@
                     Потрібно підібрати рішення для вашого об’єкту?
                 </h2>
 
-
-                <!-- Кнопка ПОД текстом, слева -->
                 <a href="/contact/" class="btn exo-btn-pill exo-btn-pill--glass">
                     Написати нам <span class="exo-btn-pill__arrow">→</span>
                 </a>
+            </div>
 
+            <!-- Форма справа -->
+            <div class="col-lg-5 col-xl-5 ms-xl-auto">
+                <div class="contact-cta-form-box">
+
+                    <!-- ЭТОТ wrapper скрывается при успехе -->
+                    <div id="callContent">
+                        <p class="contact-cta-form-text mb-4">
+                            Залиште свої контактні дані і ми зателефонуємо вам протягом 15 хвилин.
+                        </p>
+
+                        <form id="callForm" novalidate>
+                            <div class="contact-cta-field">
+                                <input class="contact-cta-input" name="name" type="text" autocomplete="name" required
+                                    maxlength="80" placeholder="Ім’я">
+                            </div>
+
+                            <div class="contact-cta-field">
+                                <input class="contact-cta-input" name="phone" type="tel" autocomplete="tel" required
+                                    inputmode="tel" maxlength="30" placeholder="Номер телефону">
+                            </div>
+
+                            <div class="contact-cta-field">
+                                <textarea class="contact-cta-input contact-cta-input--textarea" name="message" rows="3"
+                                    maxlength="500" placeholder="Повідомлення (необов’язково)"></textarea>
+                            </div>
+
+                            <div id="callFormMsg" class="small mt-2 mb-3 call-form-msg call-form-msg--light"></div>
+
+                            <div class="d-none">
+                                <label>Leave empty</label>
+                                <input type="text" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <button type="submit" class="btn exo-btn-pill exo-btn-pill--glass">
+                                Надіслати заявку
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Это показывается при успехе -->
+                    <div id="callSuccess" class="contact-cta-success" hidden>
+                        <div class="contact-cta-success__icon" aria-hidden="true">
+                            <svg class="contact-cta-success__check" viewBox="0 0 52 52">
+                                <circle class="contact-cta-success__circle" cx="26" cy="26" r="25" fill="none"></circle>
+                                <path class="contact-cta-success__path" fill="none" d="M14 27.5 L22 35 L38 18"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-cta-success__title">Готово!</div>
+                        <div class="contact-cta-success__text">
+                            Ми зателефонуємо вам протягом 15 хвилин.
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 </section>
-
-
-

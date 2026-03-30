@@ -1,0 +1,7 @@
+.ic-product-inline-link,
+.ic-product-inline-link:hover,
+.ic-product-inline-link:focus,
+.ic-product-inline-link:active {
+    color: #0d6efd;
+    text-decoration: none;
+}

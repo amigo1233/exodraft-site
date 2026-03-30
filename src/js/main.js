@@ -288,10 +288,14 @@ document.addEventListener('click', (e) => {
 
     function setMsg(text, ok) {
         if (!msg) return;
-        msg.textContent = text;
-        msg.style.color = ok ? 'blue' : 'crimson';
-    }
 
+        msg.textContent = text;
+        msg.classList.remove('is-ok', 'is-error');
+
+        if (!text) return;
+
+        msg.classList.add(ok ? 'is-ok' : 'is-error');
+    }
     function normalizePhone(phone) {
         return String(phone || "").trim().replace(/\s+/g, " ");
     }
@@ -300,14 +304,20 @@ document.addEventListener('click', (e) => {
     function showSuccess() {
         if (!successEl) return;
         if (contentEl) contentEl.hidden = true;
-        if (msg) msg.textContent = "";
+        if (msg) {
+            msg.textContent = "";
+            msg.classList.remove('is-ok', 'is-error');
+        }
         successEl.hidden = false;
     }
 
     function resetModal() {
         if (contentEl) contentEl.hidden = false;
         if (successEl) successEl.hidden = true;
-        if (msg) msg.textContent = "";
+        if (msg) {
+            msg.textContent = "";
+            msg.classList.remove('is-ok', 'is-error');
+        }
     }
 
     // когда модалка закрывается — сбрасываем состояние
@@ -331,7 +341,7 @@ document.addEventListener('click', (e) => {
         try {
             setMsg("Надсилаємо...", true);
 
-            const res = await fetch("/api/call-request", { // http://localhost:8080
+            const res = await fetch("http://localhost:3001/api/call-request", { // http://localhost:8080
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, phone, message, page: location.href, website })
