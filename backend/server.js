@@ -1,12 +1,25 @@
+import "dotenv/config";
 import express from "express";
 
 const app = express();
 app.use(express.json());
+
+const allowedOrigins = [
+    "https://exodraft.com.ua",
+    "https://www.exodraft.com.ua",
+    "http://localhost:8080"
+];
+
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+    const origin = req.headers.origin;
+
+    if (origin && allowedOrigins.includes(origin)) {
+        res.setHeader("Access-Control-Allow-Origin", origin);
+    }
+
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    // обязательно отвечаем на preflight
+
     if (req.method === "OPTIONS") return res.sendStatus(204);
     next();
 });
@@ -24,13 +37,11 @@ function clean(s, max) {
     return String(s || "").replace(/\s+/g, " ").trim().slice(0, max);
 }
 
-
 // ===== Anti-spam: rate limit + honeypot =====
 const lastByIp = new Map(); // ip -> timestamp(ms)
-const WINDOW_MS = 3;   // 30 секунд
+const WINDOW_MS = 30000;   // 30 секунд
 
 function getClientIp(req) {
-    // на VPS за nginx будет X-Forwarded-For
     const xff = req.headers["x-forwarded-for"];
     if (typeof xff === "string" && xff.length > 0) {
         return xff.split(",")[0].trim();
@@ -53,7 +64,6 @@ app.use((req, res, next) => {
     lastByIp.set(ip, now);
     next();
 });
-
 
 app.post("/api/call-request", async (req, res) => {
     const name = clean(req.body?.name, 80);
