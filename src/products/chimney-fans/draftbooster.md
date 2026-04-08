@@ -1,6 +1,6 @@
 ---
 layout: product.njk
-title: "Draftbooster"
+title: "Draftbooster - Exodraft"
 permalink: "products/draftbooster/"
 kicker: "Димохідні вентилятори"
 

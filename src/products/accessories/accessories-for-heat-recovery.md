@@ -1,6 +1,6 @@
 ---
 layout: accessories.njk
-title: "Аксесуари для рекуперації тепла"
+title: "Аксесуари для рекуперації тепла - Exodraft"
 permalink: "products/accessories-for-heat-recovery/"
 kicker: "АКСЕСУАРИ"
 

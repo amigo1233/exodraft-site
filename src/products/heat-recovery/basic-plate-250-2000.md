@@ -1,6 +1,6 @@
 ---
 layout: product.njk
-title: "Базовий теплообмінник 250-2000"
+title: "Базовий теплообмінник 250-2000 - Exodraft"
 permalink: "products/basic-plate-250-2000/"
 kicker: "ВІДНОВЛЕННЯ ТЕПЛА"
 

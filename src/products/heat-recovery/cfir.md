@@ -1,6 +1,6 @@
 ---
 layout: product.njk
-title: "CFIR"
+title: "CFIR - Exodraft"
 permalink: "products/cfir/"
 kicker: "Рекуперація тепла"
 

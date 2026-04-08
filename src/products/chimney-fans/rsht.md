@@ -1,6 +1,6 @@
 ---
 layout: product.njk
-title: "RSHT"
+title: "RSHT - Exodraft"
 permalink: "products/rsht/"
 kicker: "Димохідні вентилятори"
 

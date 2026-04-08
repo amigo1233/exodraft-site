@@ -1,12 +1,12 @@
 ---
 layout: accessories.njk
-title: "Аксесуари для димохідних вентиляторів"
+title: "Аксесуари для димососів - Exodraft"
 permalink: "products/accessories-for-chimney-fans/"
 kicker: "Аксесуари"
 
 gallery:
   - src: "/img/products/accessories/accessories-for-chimney-fans/gasmagnetventiler-1-300x430.png"
-    alt: "Аксесуари для димохідних вентиляторів"
+    alt: "Аксесуари для димососів"
     thumb: "/img/products/accessories/accessories-for-chimney-fans/gasmagnetventiler-1-300x430.png"
     thumbAlt: "Аксесуари — мініатюра"
 

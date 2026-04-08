@@ -1,6 +1,6 @@
 ---
 layout: product.njk
-title: "Привід заслінки"
+title: "Привід заслінки - Exodraft"
 permalink: "products/damper-motor/"
 kicker: "Аксесуари"
 

@@ -1,6 +1,6 @@
 ---
 layout: product.njk
-title: "EAHC21"
+title: "EAHC21 - Exodraft"
 permalink: "products/eahc21/"
 kicker: "Керування"
 

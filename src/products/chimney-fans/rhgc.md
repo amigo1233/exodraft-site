@@ -1,6 +1,6 @@
 ---
 layout: product.njk
-title: "RHGC"
+title: "RHGC - Exodraft"
 permalink: "products/rhgc.html"
 kicker: "ДИМОХІДНІ ВЕНТИЛЯТОРИ"
 

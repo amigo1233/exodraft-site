@@ -1,6 +1,6 @@
 ---
 layout: product.njk
-title: "EHC20"
+title: "EHC20 - Exodraft"
 permalink: "products/ehc20/"
 kicker: "КЕРУВАННЯ"
 

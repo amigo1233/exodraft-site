@@ -1,6 +1,6 @@
 ---
 layout: product.njk
-title: "Рекуператор серії SAFE 80-500"
+title: "Рекуператор серії SAFE 80-500 - Exodraft"
 permalink: "products/safe-plate-80-500/"
 kicker: "РЕКУПЕРАЦІЯ ТЕПЛА"
 
