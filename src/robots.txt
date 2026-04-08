@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://exodraft.com.ua/sitemap.xml
