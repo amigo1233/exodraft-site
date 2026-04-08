@@ -9,9 +9,9 @@ gallery:
     alt: "Draftbooster (Black)"
     thumb: "/img/products/chimney-fans/RBV1_schwarz-DE-300x300.png"
     thumbAlt: "Draftbooster black thumbnail"
-  - src: "/img/products/chimney-fans/RBU1_chrome-DE.png"
+  - src: "/img/products/chimney-fans/RBV1_chrome-DE.png"
     alt: "Draftbooster (Steel)"
-    thumb: "/img/products/chimney-fans/RBU1_chrome-DE.png"
+    thumb: "/img/products/chimney-fans/RBV1_chrome-DE.png"
     thumbAlt: "Draftbooster steel thumbnail"
 
 lead: |
