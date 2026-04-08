@@ -1,7 +1,7 @@
 ---
 layout: product.njk
 title: "GSV - Exodraft"
-permalink: "products/gsv.html"
+permalink: "products/gsv/"
 kicker: "ДИМОХІДНІ ВЕНТИЛЯТОРИ"
 
 gallery:

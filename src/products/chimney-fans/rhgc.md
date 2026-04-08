@@ -1,7 +1,7 @@
 ---
 layout: product.njk
 title: "RHGC - Exodraft"
-permalink: "products/rhgc.html"
+permalink: "products/rhgc/"
 kicker: "ДИМОХІДНІ ВЕНТИЛЯТОРИ"
 
 gallery:
