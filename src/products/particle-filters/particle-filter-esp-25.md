@@ -32,10 +32,6 @@ cta:
     href: "/contact/"
     class: "exo-btn-pill exo-btn-pill--primary"
     arrow: true
-  - text: "Знайти дилера"
-    href: "/contact/"
-    class: "exo-btn-pill exo-btn-pill--outline"
-    arrow: false
 
 stats:
   - kicker: "Безперервна макс. температура"

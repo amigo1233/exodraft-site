@@ -24,10 +24,7 @@ cta:
     href: "/contact/"
     class: "btn exo-btn-pill exo-btn-pill--primary"
     arrow: true
-  - text: "Знайти дилера"
-    href: "/find-dealer/"
-    class: "btn exo-btn-pill exo-btn-pill--outline"
-    arrow: false
+
 
 stats:
   - kicker: "Напрямок відведення"
