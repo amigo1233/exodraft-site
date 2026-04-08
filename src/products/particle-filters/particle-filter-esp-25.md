@@ -1,7 +1,7 @@
 ---
 layout: product.njk
 title: "Фільтр димових газів ESP-25"
-permalink: "products/particle-filter-esp-25.html"
+permalink: "products/particle-filter-esp-25/"
 kicker: "ФІЛЬТРИ ЧАСТИНОК"
 
 gallery:
