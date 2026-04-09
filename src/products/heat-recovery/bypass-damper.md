@@ -1,6 +1,7 @@
 ---
 layout: product.njk
-title: "Обхідний дросельний клапан - Exodraft"
+title: "Обхідний дросельний клапан"
+metaTitle: "Обхідний дросельний клапан - Exodraft"
 permalink: "products/bypass-damper/"
 kicker: "Аксесуари"
 

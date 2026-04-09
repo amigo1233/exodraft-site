@@ -1,6 +1,7 @@
 ---
 layout: product.njk
-title: "EBC22 - Exodraft"
+title: "EBC22"
+metaTitle: "EBC22 - Exodraft"
 permalink: "products/ebc22/"
 kicker: "Керування"
 

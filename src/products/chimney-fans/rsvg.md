@@ -1,6 +1,7 @@
 ---
 layout: product.njk
-title: "RSVG - Exodraft"
+title: "RSVG"
+metaTitle: "RSVG - Exodraft"
 permalink: "products/rsvg/"
 kicker: "ДИМОХІДНІ ВЕНТИЛЯТОРИ"
 

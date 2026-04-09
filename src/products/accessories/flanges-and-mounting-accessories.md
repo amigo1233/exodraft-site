@@ -1,6 +1,7 @@
 ---
 layout: accessories.njk
-title: "Фланці та монтажні аксесуари - Exodraft"
+title: "Фланці та монтажні аксесуари"
+metaTitle: "Фланці та монтажні аксесуари - Exodraft"
 permalink: "products/flanges-and-mounting-accessories/"
 kicker: "АКСЕСУАРИ"
 

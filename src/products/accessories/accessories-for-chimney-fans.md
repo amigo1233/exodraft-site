@@ -1,6 +1,7 @@
 ---
 layout: accessories.njk
-title: "Аксесуари для димососів - Exodraft"
+title: "Аксесуари для димососів"
+metaTitle: "Аксесуари для димососів - Exodraft"
 permalink: "products/accessories-for-chimney-fans/"
 kicker: "Аксесуари"
 

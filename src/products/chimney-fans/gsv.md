@@ -1,8 +1,10 @@
 ---
 layout: product.njk
-title: "GSV - Exodraft"
+title: "GSV"
+metaTitle: "GSV - Exodraft"
 permalink: "products/gsv/"
 kicker: "ДИМОХІДНІ ВЕНТИЛЯТОРИ"
+
 
 gallery:
   - src: "/img/products/chimney-fans/GSV-300x227.png"

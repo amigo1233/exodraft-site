@@ -1,6 +1,7 @@
 ---
 layout: product.njk
-title: "Xzense - Exodraft"
+title: "Xzense"
+metaTitle: "Xzense - Exodraft"
 permalink: "products/xzense/"
 kicker: "Керування"
 

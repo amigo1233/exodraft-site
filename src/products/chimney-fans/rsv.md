@@ -1,6 +1,7 @@
 ---
 layout: product.njk
-title: "RSV - Exodraft"
+title: "RSV"
+metaTitle: "RSV - Exodraft"
 permalink: "products/rsv/"
 kicker: "Димохідні вентилятори"
 

@@ -1,6 +1,7 @@
 ---
 layout: product.njk
-title: "EFC35S - Exodraft"
+title: "EFC35S"
+metaTitle: "EFC35S - Exodraft"
 permalink: "products/efc35s/"
 kicker: "КЕРУВАННЯ"
 

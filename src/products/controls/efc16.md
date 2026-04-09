@@ -1,6 +1,7 @@
 ---
 layout: product.njk
-title: "EFC16 - Exodraft"
+title: "EFC16"
+metaTitle: "EFC16 - Exodraft"
 permalink: "products/efc16/"
 kicker: "Керування"
 

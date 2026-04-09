@@ -1,6 +1,7 @@
 ---
 layout: product.njk
-title: "Фільтр димових газів ESP-10 - Exodraft"
+title: "Фільтр димових газів ESP-10"
+metaTitle: "Фільтр димових газів ESP-10 - Exodraft"
 permalink: "products/particle-filter-esp-10/"
 kicker: "ФІЛЬТРИ ЧАСТИНОК"
 
